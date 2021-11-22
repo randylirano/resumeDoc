@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import { useNavigate } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { useHistory } from "react-router-dom";
 import "../stylesheets/landing.css";
@@ -9,11 +10,11 @@ import img from "../images/swe.png";
 const SweResume = () => {
   /*
     sweResume: component responsible for displaying the swe resume 
+    routes: redirects to SWE page with click of "SWE" button
   */
 
-  function printMessage() {
-    console.log("Switching page to swe view");
-  }
+  // function for changing pages
+  const navigate = useNavigate();
 
   return (
     <div className="col-4">
@@ -29,7 +30,7 @@ const SweResume = () => {
         <button
           type="button"
           className="btn btn-outline-secondary"
-          onClick={printMessage}
+          onClick={() => navigate("/swe")}
         >
           Software Development
         </button>

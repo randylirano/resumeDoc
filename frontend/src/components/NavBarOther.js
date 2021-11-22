@@ -1,24 +1,33 @@
-// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { useState } from "react";
-// eslint-disable-next-line no-unused-vars
-import { useHistory } from "react-router-dom";
-import "../stylesheets/landing.css";
+import { useNavigate } from "react-router-dom";
+import "../stylesheets/swe-dashboard.css";
 import img from "../images/resumedoc-logo.png";
+import "../stylesheets/swe-dashboard.css";
+
 // Written by Kennedy Ezumah
 
-function NavBar(props) {
+function NavBarOther(props) {
   /* 
-    navBar: component responsible for displaying the navigation bar
-            This method should be called upon successful login and the login_email 
-            should be set as a parameter  
+    navBarOther: component responsible for displaying the non-landing page navigation bar
+            This method should be called upon every internal page transition 
+            beyond the landing page. login_email should be set as a parameter  
     param: login_email, default value is "DEFAULT"
     routes: redirects to login page with click of "logout" button
+            redirects to landing page with click of "home" button
   */
 
-  function printMessage() {
+  function printMessageOne() {
     console.log("Switching page to logout view");
   }
+
+  // eslint-disable-next-line no-unused-vars
+  function printMessageTwo() {
+    console.log("Switching page to landing page view");
+  }
+
+  // function for changing pages
+  const navigate = useNavigate();
 
   const [visibleEmail] = useState(props.login_email);
   return (
@@ -43,9 +52,17 @@ function NavBar(props) {
             type="button"
             className="btn btn-outline-secondary"
             id="logout-button"
-            onClick={printMessage}
+            onClick={printMessageOne}
           >
             Logout
+          </button>
+          <button
+            type="button"
+            className="btn btn-outline-secondary"
+            id="home-button"
+            onClick={() => navigate("/landing")}
+          >
+            Home
           </button>
         </div>
       </div>
@@ -54,8 +71,8 @@ function NavBar(props) {
 }
 
 // set default value
-NavBar.defaultProps = {
+NavBarOther.defaultProps = {
   login_email: "DEFAULT",
 };
 
-export default NavBar;
+export default NavBarOther;

@@ -13,11 +13,15 @@ import NavBar from "../components/NavBar";
 import "../stylesheets/landing.css";
 
 // Written by Kennedy Ezumah
+
 const Landing = (props) => {
   /*
-    landingPage: component responsible for displaying the landingPage
+    landingPage: component responsible for displaying the landing page
     params: takes an object with key-value pair of login_email as a parameter
+    imported-components: PmResume, SweResume, NavBar, UxUiResume
   */
+
+  //let obj = { login_email: "inyamah@gmail.com" };
   return (
     <div className="container">
       <div className="row">
@@ -25,7 +29,7 @@ const Landing = (props) => {
         <div className="row" id="main-content">
           <center>
             <div>
-              <h2 id="main-message">Let's get started!</h2>
+              <h1 id="main-message">Let's get started!</h1>
             </div>
           </center>
           <center>

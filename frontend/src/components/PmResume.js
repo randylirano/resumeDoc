@@ -10,7 +10,7 @@ import img from "../images/pm.png";
 const PmResume = () => {
   /*
     pmResume: component responsible for displaying the PM resume
-    routes: redirects to PM page with click of "logout" button
+    routes: redirects to PM page with click of "PM" button
   */
 
   function printMessage() {

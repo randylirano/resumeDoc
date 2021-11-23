@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../stylesheets/landing.css";
 import img from "../images/resumedoc-logo.png";
 // Written by Kennedy Ezumah
@@ -16,11 +16,12 @@ function NavBar(props) {
     routes: redirects to login page with click of "logout" button
   */
 
-  function printMessage() {
-    console.log("Switching page to logout view");
-  }
+  // function printMessage() {
+  //   console.log("Switching page to logout view");
+  // }
 
   const [visibleEmail] = useState(props.login_email);
+  const navigate = useNavigate();
   return (
     <div className="row" role="navigation">
       <div className="col-8" id="left-half-navbar">
@@ -43,7 +44,7 @@ function NavBar(props) {
             type="button"
             className="btn btn-outline-secondary"
             id="logout-button"
-            onClick={printMessage}
+            onClick={() => navigate("/")}
           >
             Logout
           </button>

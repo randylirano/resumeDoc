@@ -2,24 +2,24 @@
 import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const test_data = [
-  {
-    credential: {
-      login_email: "mcraighall0@vimeo.com",
-      password: "KJGapYMGcSIT",
-    },
-    first_name: "Mellicent",
-    last_name: "Craighall",
-  },
-  {
-    credential: {
-      login_email: "randylirano@fakemail.com",
-      password: "myFakePassword",
-    },
-    first_name: "Randy",
-    last_name: "Lirano",
-  },
-];
+// const test_data = [
+//   {
+//     credential: {
+//       login_email: "mcraighall0@vimeo.com",
+//       password: "KJGapYMGcSIT",
+//     },
+//     first_name: "Mellicent",
+//     last_name: "Craighall",
+//   },
+//   {
+//     credential: {
+//       login_email: "randylirano@fakemail.com",
+//       password: "myFakePassword",
+//     },
+//     first_name: "Randy",
+//     last_name: "Lirano",
+//   },
+// ];
 
 export function SignUpForm() {
   const [first_name, setFirstName] = useState("");

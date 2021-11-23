@@ -17,9 +17,9 @@ function NavBarOther(props) {
             redirects to landing page with click of "home" button
   */
 
-  function printMessageOne() {
-    console.log("Switching page to logout view");
-  }
+  // function printMessageOne() {
+  //   console.log("Switching page to logout view");
+  // }
 
   // eslint-disable-next-line no-unused-vars
   function printMessageTwo() {
@@ -52,7 +52,7 @@ function NavBarOther(props) {
             type="button"
             className="btn btn-outline-secondary"
             id="logout-button"
-            onClick={printMessageOne}
+            onClick={() => navigate("/")}
           >
             Logout
           </button>

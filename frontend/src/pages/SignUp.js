@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { useRef, useState, useEffect } from "react";
 
 const test_data = [
@@ -73,7 +74,7 @@ export function SignUpForm() {
             <input type="password" name="login_password" id="login_password" onChange={(e) => setLoginPassword(e.target.value)}/>
           </label>
         </div>
-        <input type="submit" value="Login"/>
+        <input type="submit" value="SignUp"/>
       </div>
     </form>
   );

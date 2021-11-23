@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const test_data = [
   {
@@ -25,6 +26,7 @@ export function SignUpForm() {
   const [last_name, setLastName] = useState("");
   const [login_email, setLogiEmail] = useState("");
   const [login_password, setLoginPassword] = useState("");
+  const navigate = useNavigate();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -41,6 +43,7 @@ export function SignUpForm() {
     let queryResult = 1;
     if (queryResult == 0) {
       console.log("SIGN UP SUCCESS", provided_info);
+      navigate("/");
     } else {
       console.log("EMAIL AND PASSWORD ALREADY EXIST!! PLEASE USE DIFFERENT CREDENTIAL");
     };

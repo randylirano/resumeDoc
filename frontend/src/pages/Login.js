@@ -1,8 +1,10 @@
+// eslint-disable-next-line no-unused-vars
 import { useRef, useState, useEffect } from "react";
+// eslint-disable-next-line no-unused-vars
 import { useNavigate } from "react-router-dom";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-
+// eslint-disable-next-line no-unused-vars
 import {SignUpForm} from "./SignUp";
+// eslint-disable-next-line no-unused-vars
 import Landing from "./Landing";
 
 const test_credential = {
@@ -30,6 +32,8 @@ export function LoginForm() {
       console.log("INVALID CREDENTIAL");
     }
   }
+  
+  const navigate = useNavigate();
 
   return (
     <main>
@@ -51,9 +55,13 @@ export function LoginForm() {
           <input type="submit" value="Login"/>
         </div>
       </form>
-      <nav>
-         <Link to="/signup">Sign-Up</Link>
-       </nav>
+      <button
+        type="button"
+        className="btn btn-outline-secondary"
+        onClick={() => navigate("/signup")}
+        >
+        Sign Up
+        </button>
     </main>
     
   );

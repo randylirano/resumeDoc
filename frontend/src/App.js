@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Landing from "./pages/Landing";
 import SweDashboard from "./pages/SweDashboard";
+import UxUiDashboard from "./pages/UxUiDashboard";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/landing" element={<Landing />} />
         <Route exact path="/swe" element={<SweDashboard />} />
+        <Route exact path="/uxui" element={<UxUiDashboard />} />
       </Routes>
     </Router>
   );

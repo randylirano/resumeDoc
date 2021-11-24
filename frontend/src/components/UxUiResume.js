@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import { useNavigate } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { useHistory } from "react-router-dom";
 import "../stylesheets/landing.css";
@@ -12,9 +13,8 @@ const UxUiResume = () => {
     routes: redirects to ux/ui dashboard page with click of "UX/UI Design" button
   */
 
-  function printMessage() {
-    console.log("Switching page to UXUI view");
-  }
+  // function for changing pages
+  const navigate = useNavigate();
 
   return (
     <div className="col-4">
@@ -30,7 +30,7 @@ const UxUiResume = () => {
         <button
           type="button"
           className="btn btn-outline-secondary"
-          onClick={printMessage}
+          onClick={() => navigate("/uxui")}
         >
           UX/UI Design
         </button>

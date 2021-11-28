@@ -8,7 +8,7 @@ import "../stylesheets/landing.css";
 import img from "../images/resumedoc-logo.png";
 // Written by Kennedy Ezumah
 
-function NavBar() {
+function NavBar(props) {
   /* 
     navBar: component responsible for displaying the navigation bar
             This method should be called upon successful login and the login_email 
@@ -21,10 +21,8 @@ function NavBar() {
   //   console.log("Switching page to logout view");
   // }
 
+  const [visibleEmail] = useState(props.login_email);
   const navigate = useNavigate();
-
-  let { useremail } = useParams();
-
   return (
     <div className="row" role="navigation">
       <div className="col-8" id="left-half-navbar">
@@ -40,7 +38,7 @@ function NavBar() {
       </div>
       <div className="col-4" id="right-half-navbar">
         <div className="col" id="logged-in-user">
-          Online: {useremail}
+          Online: {visibleEmail}
         </div>
         <div className="col">
           <button

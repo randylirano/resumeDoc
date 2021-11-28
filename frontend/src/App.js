@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
+import LoginPage from "./pages/LoginPage.js";
+import SignUpPage from "./pages/SignUpPage.js";
 import Landing from "./pages/Landing";
 import SweDashboard from "./pages/SweDashboard";
 import UxUiDashboard from "./pages/UxUiDashboard";
@@ -10,8 +10,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Login />} />
-        <Route exact path="/signup" element={<SignUp />} />
+        <Route exact path="/" element={<LoginPage />} />
+        <Route exact path="/signup" element={<SignUpPage />} />
         <Route exact path="/landing" element={<Landing />} />
         <Route exact path="/swe" element={<SweDashboard />} />
         <Route exact path="/uxui" element={<UxUiDashboard />} />

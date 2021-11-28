@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 // eslint-disable-next-line no-unused-vars
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 // eslint-disable-next-line
 import UxUiResume from "../components/UxUiResume";
 // eslint-disable-next-line
@@ -14,7 +14,7 @@ import "../stylesheets/landing.css";
 
 // Written by Kennedy Ezumah
 
-const Landing = (props) => {
+const Landing = () => {
   /*
     landingPage: component responsible for displaying the landing page
     params: takes an object with key-value pair of login_email as a parameter
@@ -22,10 +22,15 @@ const Landing = (props) => {
   */
 
   //let obj = { login_email: "inyamah@gmail.com" };
+  // let logged_email = "HELLO";
+  const location = useLocation();
+  const activeUser = location.state.login_email;
+
+  console.log("PRINTING PROPS:", activeUser);
   return (
     <div className="container">
       <div className="row">
-        <NavBar login_email={props.login_email} />
+        <NavBar login_email={activeUser} />
         <div className="row" id="main-content">
           <center>
             <div>

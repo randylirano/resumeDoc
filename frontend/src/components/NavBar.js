@@ -18,7 +18,7 @@ function NavBar(props) {
   */
 
   // function printMessage() {
-  //   console.log("Switching page to logout view");
+  console.log(props.login_email);
   // }
 
   const [visibleEmail] = useState(props.login_email);

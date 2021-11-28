@@ -17,12 +17,12 @@ import "../stylesheets/landing.css";
 const Landing = () => {
   /*
     landingPage: component responsible for displaying the landing page
-    params: takes an object with key-value pair of login_email as a parameter
+                Other pages can redirect to this page by using the navigate 
+                method and passing the state object as a parameter of the form:
+                "{ state: { login_email: login_email } }"
     imported-components: PmResume, SweResume, NavBar, UxUiResume
   */
 
-  //let obj = { login_email: "inyamah@gmail.com" };
-  // let logged_email = "HELLO";
   const location = useLocation();
   const activeUser = location.state.login_email;
 
@@ -45,9 +45,9 @@ const Landing = () => {
               </h5>
             </div>
           </center>
-          <SweResume />
-          <UxUiResume />
-          <PmResume />
+          <SweResume login_email={activeUser} />
+          <UxUiResume login_email={activeUser} />
+          <PmResume login_email={activeUser} />
           <footer>
             <center>© 2021 ResumeDoc</center>
           </footer>

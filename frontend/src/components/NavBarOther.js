@@ -17,15 +17,6 @@ function NavBarOther(props) {
             redirects to landing page with click of "home" button
   */
 
-  // function printMessageOne() {
-  //   console.log("Switching page to logout view");
-  // }
-
-  // eslint-disable-next-line no-unused-vars
-  function printMessageTwo() {
-    console.log("Switching page to landing page view");
-  }
-
   // function for changing pages
   const navigate = useNavigate();
 
@@ -60,7 +51,11 @@ function NavBarOther(props) {
             type="button"
             className="btn btn-outline-secondary"
             id="home-button"
-            onClick={() => navigate("/landing")}
+            onClick={() =>
+              navigate("/landing", {
+                state: { login_email: props.login_email },
+              })
+            }
           >
             Home
           </button>

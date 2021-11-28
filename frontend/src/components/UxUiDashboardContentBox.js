@@ -39,7 +39,7 @@ const UxUiDashboardContentBox = (props) => {
       <div className="row">
         <center>
           <div>
-            <h1 id="main-message">Your UXUI Development Dashboard</h1>
+            <h1 id="main-message">UX/UI Resume Dashboard</h1>
           </div>
         </center>
         <center>

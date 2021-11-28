@@ -39,7 +39,7 @@ const SweDashboardContentBox = (props) => {
       <div className="row">
         <center>
           <div>
-            <h1 id="main-message">Your Software Development Dashboard</h1>
+            <h1 id="main-message">Software Development Resume Dashboard</h1>
           </div>
         </center>
         <center>

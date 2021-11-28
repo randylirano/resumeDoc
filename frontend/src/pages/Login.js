@@ -7,7 +7,7 @@ import { SignUpForm } from "./SignUp";
 // eslint-disable-next-line no-unused-vars
 import Landing from "./Landing";
 // eslint-disable-next-line no-unused-vars
-import "../stylesheets/landing.css"; 
+import "../stylesheets/landing.css";
 
 const test_credential = {
   login_email: "randylirano@fakemail.com",
@@ -32,7 +32,7 @@ export function LoginForm() {
       login_credential.login_password == test_credential.login_password
     ) {
       console.log("LOGGED IN", login_credential);
-      navigate("/landing");
+      navigate("/landing/randy@fakemail.com");
     } else {
       console.log("INVALID CREDENTIAL");
     }

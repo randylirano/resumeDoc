@@ -1,13 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+// eslint-disable-next-line no-unused-vars
 import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../stylesheets/landing.css";
 import img from "../images/resumedoc-logo.png";
 // Written by Kennedy Ezumah
 
-function NavBar(props) {
+function NavBar() {
   /* 
     navBar: component responsible for displaying the navigation bar
             This method should be called upon successful login and the login_email 
@@ -20,8 +21,10 @@ function NavBar(props) {
   //   console.log("Switching page to logout view");
   // }
 
-  const [visibleEmail] = useState(props.login_email);
   const navigate = useNavigate();
+
+  let { useremail } = useParams();
+
   return (
     <div className="row" role="navigation">
       <div className="col-8" id="left-half-navbar">
@@ -37,7 +40,7 @@ function NavBar(props) {
       </div>
       <div className="col-4" id="right-half-navbar">
         <div className="col" id="logged-in-user">
-          Online: {visibleEmail}
+          Online: {useremail}
         </div>
         <div className="col">
           <button

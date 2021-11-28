@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 // eslint-disable-next-line no-unused-vars
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 // eslint-disable-next-line
 import UxUiResume from "../components/UxUiResume";
 // eslint-disable-next-line

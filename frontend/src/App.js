@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route exact path="/signup" element={<SignUp />} />
-        <Route exact path="/landing" element={<Landing />} />
+        <Route exact path="/landing/:useremail" element={<Landing />} />
         <Route exact path="/swe" element={<SweDashboard />} />
         <Route exact path="/uxui" element={<UxUiDashboard />} />
       </Routes>

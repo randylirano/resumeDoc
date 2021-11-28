@@ -1,6 +1,8 @@
 body {
-  background-color: #f3e6e8;
-  background-image: linear-gradient(315deg, #f3e6e8 0%, #d5d0e5 74%);
+  background-color: coral;
+  /*background-image: linear-gradient(315deg, #f3e6e8 0%, #d5d0e5 74%);*/
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -46,22 +48,26 @@ footer {
   max-height: 30rem;
   height: 1000px;
   width: 1000px;
-  overflow-y: scroll;
+  /*overflow-y: scroll;   -> will automatically display as content fills*/
   justify-content: center;
-  background: rgb(238, 174, 202);
+  /*background: rgb(238, 174, 202); */
   background: radial-gradient(
     circle,
-    rgba(238, 174, 202, 1) 0%,
+    rgba(238, 174, 202) 0%,
     rgba(148, 187, 233, 1) 100%
   );
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+  box-shadow: 10px 15px 10px 0px rgba(0, 0, 0, 0.38);
   margin-top: 30px;
   margin-bottom: 30px;
+  border-radius: 25px;
+  overflow-x: hidden;
+  padding: 0;
 }
 
 #default-text {
-  margin-top: 250px;
+  margin-top: 220px;
   color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px gray, 0 0 5px gray;
   vertical-align: middle;
   text-align: center;
 }

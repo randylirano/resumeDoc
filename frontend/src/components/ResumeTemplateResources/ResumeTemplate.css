@@ -1,0 +1,38 @@
+#full-name {
+  text-align: center;
+}
+
+#education-title,
+#project-title,
+#tech-skills-title,
+#interests-title {
+  text-align: center;
+}
+
+#school-and-major {
+  margin-left: 200px;
+  position: fixed;
+}
+
+#school-dates {
+  margin-left: 1500px;
+  position: fixed;
+}
+
+#tech-skills-block,
+#interests-block,
+#project-block,
+#education-block {
+  margin-bottom: 50px;
+}
+
+#project-listing,
+#tech-skills-list,
+#interests-list {
+  margin-left: 200px;
+}
+
+#project-dates {
+  margin-left: 1300px;
+  position: fixed;
+}

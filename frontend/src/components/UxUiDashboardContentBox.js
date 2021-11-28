@@ -6,11 +6,11 @@ import "../stylesheets/swe-dashboard.css";
 
 // Written by Kennedy Ezumah
 
-const SweDashboardContentBox = (props) => {
+const UxUiDashboardContentBox = (props) => {
   /*
-    SweDashboardContentBox: 
+    UxUiDashboardContentBox: 
             component responsible for rendering the content box. Content box fetches and 
-            displays user's SWE resumes from the database. A backend call is made with a helper 
+            displays user's UXUI resumes from the database. A backend call is made with a helper 
             function to the listening Express application to retrieve this data. If this call is 
             successful, data is shown as components. Otherwise, a "No Existing Resumes" default
             message is shown.
@@ -31,7 +31,7 @@ const SweDashboardContentBox = (props) => {
   };
 
   function printMessage() {
-    console.log("Switching page to create new swe resume view");
+    console.log("Switching page to create new UxUiresume view");
   }
 
   return (
@@ -39,13 +39,13 @@ const SweDashboardContentBox = (props) => {
       <div className="row">
         <center>
           <div>
-            <h1 id="main-message">Software Development Resume Dashboard</h1>
+            <h1 id="main-message">UX/UI Resume Dashboard</h1>
           </div>
         </center>
         <center>
           <div>
             <h5 id="main-prompt">
-              Every developer has a story. We'll help you tell yours.
+              Every designer has a story. We'll help you tell yours.
             </h5>
           </div>
           <img
@@ -81,4 +81,4 @@ const SweDashboardContentBox = (props) => {
   );
 };
 
-export default SweDashboardContentBox;
+export default UxUiDashboardContentBox;

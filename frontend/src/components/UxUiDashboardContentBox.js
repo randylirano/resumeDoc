@@ -21,12 +21,23 @@ const UxUiDashboardContentBox = (props) => {
   // eslint-disable-next-line no-unused-vars
   const [userEmail] = useState(props.login_email);
   // eslint-disable-next-line no-unused-vars
-  const databaseQuery = (userEmail) => {
+  const databaseQuery = async (userEmail) => {
     // TO DO
     // perform database retrieval
     // should return pointers to resume entries if successful -> pass to redraw function
     // use Element.innerHTML selector API for #default-text
     // otherwise, should return default message
+
+    // eslint-disable-next-line no-unused-vars
+    const res = await fetch("api/swe/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(userEmail),
+    });
+
+    ///if (res.ok) {
+
+    //}
     return userEmail;
   };
 

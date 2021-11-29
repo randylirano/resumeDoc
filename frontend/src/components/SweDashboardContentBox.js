@@ -3,14 +3,14 @@ import React from "react";
 import { useState } from "react";
 import img from "../images/new-document.png";
 import "../stylesheets/swe-dashboard.css";
+import { useNavigate } from "react-router-dom";
 
 // Written by Kennedy Ezumah
 
 const SweDashboardContentBox = (props) => {
   /*
-    SweDashboardContentBox: 
-            component responsible for rendering the content box. Content box fetches and 
-            displays user's SWE resumes from the database. A backend call is made with a helper 
+    SweDashboardContentBox: component responsible for rendering the content box. Content box fetches 
+            and displays user's SWE resumes from the database. A backend call is made with a helper 
             function to the listening Express application to retrieve this data. If this call is 
             successful, data is shown as components. Otherwise, a "No Existing Resumes" default
             message is shown.
@@ -21,19 +21,29 @@ const SweDashboardContentBox = (props) => {
   // eslint-disable-next-line no-unused-vars
   const [userEmail] = useState(props.login_email);
   // eslint-disable-next-line no-unused-vars
-  const databaseQuery = (userEmail) => {
+  const displayResume = async (userEmail) => {
+    const resumeList = document.querySelector("#default-text");
+    resumeList.innerHTML = "";
+    resumeList("");
     // TO DO
     // perform database retrieval
     // should return pointers to resume entries if successful -> pass to redraw function
     // use Element.innerHTML selector API for #default-text
     // otherwise, should return default message
+    // eslint-disable-next-line no-unused-vars
+    const res = await fetch("api/swe/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(userEmail),
+    });
+
+    //if (res.ok) {
+
+    //}
     return userEmail;
   };
 
-  function printMessage() {
-    console.log("Switching page to create new swe resume view");
-  }
-
+  const navigate = useNavigate();
   return (
     <div className="row" id="main-content">
       <div className="row">
@@ -58,7 +68,11 @@ const SweDashboardContentBox = (props) => {
             <button
               type="button"
               className="btn btn-outline-secondary"
-              onClick={printMessage}
+              onClick={() =>
+                navigate("/create-swe-resume", {
+                  state: { login_email: userEmail },
+                })
+              }
             >
               Create a New Resume
             </button>

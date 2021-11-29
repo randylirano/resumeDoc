@@ -12,7 +12,7 @@ body {
 html,
 body {
   height: 100%;
-  overflow-x: hidden; /* hides scrollbar */
+  overflow-x: hidden;
 }
 
 #main-content {

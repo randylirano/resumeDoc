@@ -5,6 +5,7 @@ import SignUp from "./pages/SignUp.js";
 import Landing from "./pages/Landing";
 import SweDashboard from "./pages/SweDashboard";
 import UxUiDashboard from "./pages/UxUiDashboard";
+import CreateSweResumePage from "./pages/CreateSweResumePage";
 import PmDashboard from "./pages/PmDashboard.js";
 import CreatePmResumePage from "./pages/CreatePmResumePage";
 
@@ -17,12 +18,15 @@ function App() {
         <Route exact path="/landing" element={<Landing />} />
         <Route exact path="/swe" element={<SweDashboard />} />
         <Route exact path="/uxui" element={<UxUiDashboard />} />
+        <Route
+          exact
+          path="/create-swe-resume"
+          element={<CreateSweResumePage />}/>
         <Route exact path="/pm" element={<PmDashboard />} />
         <Route
           exact
           path="/create-pm-resume"
-          element={<CreatePmResumePage />}
-        />
+          element={<CreatePmResumePage />}/>
       </Routes>
     </Router>
   );

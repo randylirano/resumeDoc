@@ -18,7 +18,6 @@ const SweDashboard = () => {
     imported-components: NavBarOther, SweDashBoardContentBox
   */
 
-  console.log("HERE", login_email);
   return (
     <div className="container">
       <div className="row">

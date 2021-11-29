@@ -41,7 +41,7 @@ const CreateResume = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(resume);
+    //console.log(resume);
 
     // send form data to backend route
     // show user confirmation message
@@ -58,7 +58,7 @@ const CreateResume = (props) => {
         state: { login_email: userEmail },
       });
     } else {
-      console.log(res.status);
+      alert("Submission unsucessful");
     }
   };
 

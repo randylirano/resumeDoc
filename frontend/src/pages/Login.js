@@ -4,7 +4,9 @@ import { useNavigate, Link } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import "../stylesheets/landing.css"; 
 
-const LoginPage = () => {
+// Author: Randy Lirano
+
+const Login = () => {
   const [login_email, setLogiEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -70,4 +72,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;

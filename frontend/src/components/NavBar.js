@@ -17,10 +17,6 @@ function NavBar(props) {
     routes: redirects to login page with click of "logout" button
   */
 
-  // function printMessage() {
-  console.log(props.login_email);
-  // }
-
   const [visibleEmail] = useState(props.login_email);
   const navigate = useNavigate();
   return (

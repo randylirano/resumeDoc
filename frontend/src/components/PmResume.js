@@ -1,21 +1,23 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import { useNavigate } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
-import { useHistory } from "react-router-dom";
+import { useState } from "react";
 import "../stylesheets/landing.css";
-import img from "../images/pm.png";
+import img from "../images/swe.png";
+// Written by Randy Lirano
 
-// Written by Kennedy Ezumah
-
-const PmResume = () => {
+const PmResume = (props) => {
   /*
     pmResume: component responsible for displaying the PM resume
     routes: redirects to PM page with click of "PM" button
   */
 
-  function printMessage() {
-    console.log("Switching page to PM view");
-  }
+  // function for changing pages
+  const navigate = useNavigate();
+
+  // save login email as a state variable
+  const [login_email] = useState(props.login_email);
 
   return (
     <div className="col-4">
@@ -31,7 +33,8 @@ const PmResume = () => {
         <button
           type="button"
           className="btn btn-outline-secondary"
-          onClick={printMessage}
+          onClick={() =>
+            navigate("/pm", { state: { login_email: login_email } })}
         >
           Product Management
         </button>

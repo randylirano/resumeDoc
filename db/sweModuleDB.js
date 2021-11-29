@@ -17,31 +17,31 @@ async function getAllResumes(credentialObject) {
     await client.connect();
     console.log("sweModuleDB.js: db connection established...");
 
-  query = [
-    {
-      $match: {
-        "credential.login_email": {credentialObject.login_email},
+    query = [
+      {
+        $match: {
+          "credential.login_email": { credentialObject },
+        },
       },
-    },
-    {
-      $lookup: {
-        from: "SWE_Resumes",
-        localField: "swe_resume_id",
-        foreignField: "swe_resume_id",
-        as: "User_SWE_Resumes",
+      {
+        $lookup: {
+          from: "SWE_Resumes",
+          localField: "swe_resume_id",
+          foreignField: "swe_resume_id",
+          as: "User_SWE_Resumes",
+        },
       },
-    },
-    {
-      $project: {
-        _id: 0,
-        first_name: 1,
-        last_name: 1,
-        User_SWE_Resumes: 1,
+      {
+        $project: {
+          _id: 0,
+          first_name: 1,
+          last_name: 1,
+          User_SWE_Resumes: 1,
+        },
       },
-    },
-  ];
+    ];
 
- return await db.collection(COLLECTION).aggregate(query).toArray();
+    return await db.collection(COLLECTION).aggregate(query).toArray();
   } finally {
     await client.close();
   }
@@ -49,9 +49,8 @@ async function getAllResumes(credentialObject) {
 
 // method to create new SWE resume entry in database
 async function createNewResume(entryObject) {
-
   const client = new MongoClient(uri);
-  let userEmail = entryObject.user.login_email
+  let userEmail = entryObject.user.login_email;
   const db = client.db(DB_NAME);
 
   try {
@@ -72,19 +71,19 @@ async function createNewResume(entryObject) {
       descriptionThree: entryObject.descriptionThree,
       techSkillsList: entryObject.techSkillsList,
       interestsList: entryObject.interestsList,
-    }
+    };
 
     await db.collection(COLLECTION).insertOne(newResumeEntry);
-    // add new resume_id to the list of swe resumes owned by the user in the user collection 
-   return await db.collection("Users").update(
-   { credential: {login_email : userEmail }},
-   { $addToSet: { swe_resume_id: newResumeEntry.swe_resume_id } }
-)
-
-  }finally {
+    // add new resume_id to the list of swe resumes owned by the user in the user collection
+    return await db
+      .collection("Users")
+      .update(
+        { credential: { login_email: userEmail } },
+        { $addToSet: { swe_resume_id: newResumeEntry.swe_resume_id } }
+      );
+  } finally {
     await client.close();
   }
-
 }
 
 module.exports.getAllResumes = getAllResumes;

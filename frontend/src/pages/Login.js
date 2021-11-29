@@ -2,7 +2,7 @@ import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { useNavigate, Link } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
-import "../stylesheets/landing.css"; 
+import "../stylesheets/landing.css";
 
 // Author: Randy Lirano
 
@@ -14,22 +14,22 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let login_credential = {
-      "login_email": login_email,
-      "password": password
+      login_email: login_email,
+      password: password,
     };
 
     // console.log("AT FRONTEND SENDING:", login_credential);
 
     const res = await fetch("api/users/login", {
       method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(login_credential)
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(login_credential),
     });
 
     // console.log("AT FRONTEND GOT:", res);
 
     if (res.ok) {
-      navigate("/landing", {state:{login_email:login_email}});
+      navigate("/landing", { state: { login_email: login_email } });
     } else {
       alert("Incorrect email and password combination. Please retry.");
     }

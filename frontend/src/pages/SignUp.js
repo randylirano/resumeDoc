@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 // Author: Randy Lirano
 
-const SignUpPage = () => {
+const SignUp = () => {
   // eslint-disable-next-line no-unused-vars
   const [first_name, setFirstName] = useState("");
   // eslint-disable-next-line no-unused-vars
@@ -78,4 +78,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default SignUp;

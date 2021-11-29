@@ -20,7 +20,7 @@ async function getAllResumes(credentialObject) {
   query = [
     {
       $match: {
-        "credential.login_email": {credentialObject.login_email},
+        "credential.login_email": {credentialObject},
       },
     },
     {

@@ -28,13 +28,6 @@ async function getCredential(inputCredential) {
 
     // query parameter
     const queryParams = {
-      
-      // credential: {
-      //   login_email: inputCredential.login_email + "",
-      //   password: "q2BqM8f6g6k",
-      // },
-      // "first_name": "Rubi"
-      // "credential.login_email": inputCredential.login_email
       credential: {
         login_email: inputCredential.login_email,
         password: inputCredential.password,

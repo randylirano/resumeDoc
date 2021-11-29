@@ -4,11 +4,6 @@ import { useNavigate, Link } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import "../stylesheets/landing.css"; 
 
-// const test_credential = {
-//   login_email: "randylirano@fakemail.com",
-//   login_password: "myFakePassword",
-// };
-
 const LoginPage = () => {
   const [login_email, setLogiEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -74,6 +69,5 @@ const LoginPage = () => {
     </main>
   );
 };
-
 
 export default LoginPage;

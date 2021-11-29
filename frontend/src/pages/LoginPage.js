@@ -4,6 +4,8 @@ import { useNavigate, Link } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import "../stylesheets/landing.css"; 
 
+// Author: Randy Lirano
+
 const LoginPage = () => {
   const [login_email, setLogiEmail] = useState("");
   const [password, setPassword] = useState("");

@@ -2,6 +2,8 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// Author: Randy Lirano
+
 const SignUpPage = () => {
   // eslint-disable-next-line no-unused-vars
   const [first_name, setFirstName] = useState("");

@@ -37,7 +37,7 @@ async function getCredential(inputCredential) {
       // "credential.login_email": inputCredential.login_email
       credential: {
         login_email: inputCredential.login_email,
-        password: inputCredential.login_password,
+        password: inputCredential.password,
       },
     };
 

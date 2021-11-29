@@ -11,14 +11,14 @@ import "../stylesheets/landing.css";
 
 const LoginPage = () => {
   const [login_email, setLogiEmail] = useState("");
-  const [login_password, setLoginPassword] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     let login_credential = {
       "login_email": login_email,
-      "login_password": login_password
+      "password": password
     };
 
     // console.log("AT FRONTEND SENDING:", login_credential);
@@ -62,7 +62,7 @@ const LoginPage = () => {
                   type="password"
                   name="login_password"
                   id="login_password"
-                  onChange={(e) => setLoginPassword(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </label>
             </div>

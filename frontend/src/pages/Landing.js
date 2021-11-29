@@ -26,7 +26,6 @@ const Landing = () => {
   const location = useLocation();
   const activeUser = location.state.login_email;
 
-  console.log("PRINTING PROPS:", activeUser);
   return (
     <div className="container">
       <div className="row">

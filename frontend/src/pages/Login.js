@@ -6,7 +6,7 @@ import "../stylesheets/landing.css";
 
 // Author: Randy Lirano
 
-const LoginPage = () => {
+const Login = () => {
   const [login_email, setLogiEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -72,4 +72,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;

@@ -11,7 +11,7 @@ const CreateResume = (props) => {
   /*
     CreateResume: component responsible for rendering the create resume form
                   Upon submit, form data is sent to the backend route that handles submissions
-                  and screen is rerouted to swe dashboard
+                  and screen is rerouted to pm dashboard
     params: takes the email of the authenticated user as a parameter and uses it to handle data 
             submission
    */

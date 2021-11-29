@@ -1,58 +1,53 @@
 // eslint-disable-next-line no-unused-vars
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-// const test_data = [
-//   {
-//     credential: {
-//       login_email: "mcraighall0@vimeo.com",
-//       password: "KJGapYMGcSIT",
-//     },
-//     first_name: "Mellicent",
-//     last_name: "Craighall",
-//   },
-//   {
-//     credential: {
-//       login_email: "randylirano@fakemail.com",
-//       password: "myFakePassword",
-//     },
-//     first_name: "Randy",
-//     last_name: "Lirano",
-//   },
-// ];
+// Author: Randy Lirano
 
-export function SignUpForm() {
+const SignUp = () => {
+  // eslint-disable-next-line no-unused-vars
   const [first_name, setFirstName] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [last_name, setLastName] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [login_email, setLogiEmail] = useState("");
-  const [login_password, setLoginPassword] = useState("");
-  const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
+  const [password, setPassword] = useState("");
+  // eslint-disable-next-line no-unused-vars
+  let navigate = useNavigate();
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    // retrieve user's provided info
-    let provided_info = {
-      "first_name": first_name,
-      "last_name": last_name,
-      "login_email":login_email,
-      "login_password": login_password
+  let signUpFormRef = useRef();
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+    // transfer form data into data object
+    const formData = new FormData(signUpFormRef.current);
+
+    let data = {};
+    for (let [key, val] of formData.entries()) {
+      data[key] = val;
     };
-    // console.log(login_credential);
-    // if provided email and password already exist: sign-up failed
-    // else, sign-up success
-    let queryResult = 1;
-    if (queryResult == 0) {
-      console.log("SIGN UP SUCCESS", provided_info);
+
+    console.log("AT FRONT END, PROVIDED DATA", data);
+
+    const res = await fetch("api/users/create", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
       navigate("/");
     } else {
-      console.log("EMAIL AND PASSWORD ALREADY EXIST!! PLEASE USE DIFFERENT CREDENTIAL");
-    };
+      alert("Sign-up failed.");
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} ref={signUpFormRef}>
       <div className="form-inner">
-        <h2>Sign Up</h2>
+        <h1>Sign Up</h1>
         <div className="form-group">
           <label>
             First Name:
@@ -74,13 +69,13 @@ export function SignUpForm() {
         <div className="form-group">
           <label>
             Password:
-            <input type="password" name="login_password" id="login_password" onChange={(e) => setLoginPassword(e.target.value)}/>
+            <input type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)}/>
           </label>
         </div>
         <input type="submit" value="SignUp"/>
       </div>
     </form>
   );
-}
+};
 
-export default SignUpForm;
+export default SignUp;

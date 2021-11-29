@@ -1,11 +1,13 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
+import Login from "./pages/Login.js";
+import SignUp from "./pages/SignUp.js";
 import Landing from "./pages/Landing";
 import SweDashboard from "./pages/SweDashboard";
 import UxUiDashboard from "./pages/UxUiDashboard";
 import CreateSweResumePage from "./pages/CreateSweResumePage";
+import PmDashboard from "./pages/PmDashboard.js";
+import CreatePmResumePage from "./pages/CreatePmResumePage";
 
 function App() {
   return (
@@ -19,8 +21,12 @@ function App() {
         <Route
           exact
           path="/create-swe-resume"
-          element={<CreateSweResumePage />}
-        />
+          element={<CreateSweResumePage />}/>
+        <Route exact path="/pm" element={<PmDashboard />} />
+        <Route
+          exact
+          path="/create-pm-resume"
+          element={<CreatePmResumePage />}/>
       </Routes>
     </Router>
   );

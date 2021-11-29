@@ -21,7 +21,10 @@ const SweDashboardContentBox = (props) => {
   // eslint-disable-next-line no-unused-vars
   const [userEmail] = useState(props.login_email);
   // eslint-disable-next-line no-unused-vars
-  const displayResume = async (userEmail, textID) => {
+  const displayResume = async (userEmail) => {
+    const resumeList = document.querySelector("#default-text");
+    resumeList.innerHTML = "";
+    resumeList("");
     // TO DO
     // perform database retrieval
     // should return pointers to resume entries if successful -> pass to redraw function

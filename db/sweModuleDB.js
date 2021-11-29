@@ -41,7 +41,7 @@ async function getAllResumes(credentialObject) {
     },
   ];
 
- return await db.collection(COLLECTION).find(query).toArray();
+ return await db.collection(COLLECTION).aggregate(query).toArray();
   } finally {
     await client.close();
   }
@@ -87,5 +87,5 @@ async function createNewResume(entryObject) {
 
 }
 
-module.exports.getAllResumes
-module.exports.createNewResume
+module.exports.getAllResumes = getAllResumes;
+module.exports.createNewResume = createNewResume;

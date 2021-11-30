@@ -67,7 +67,7 @@ Once the local database has been created, follow these steps to run locally:
 6. Using your browser go to localhost: http://locahost:3000/ 
 
 ### Relevant Links
-[Demo](https://resumedoc.herokuapp.com/)
-[Video]()
-[Slides](https://docs.google.com/presentation/d/1BTYYXypbosWAm4gJ2Wu3WdDcv5MKs_HqppMUeoTTZis/edit?usp=sharing)
+[Demo](https://resume-doc.herokuapp.com/)
+[Video](to be uploaded)
+[Slides] https://docs.google.com/presentation/d/1BTYYXypbosWAm4gJ2Wu3WdDcv5MKs_HqppMUeoTTZis/edit?usp=sharing
 [Class](https://johnguerra.co/classes/webDevelopment_fall_2021/)

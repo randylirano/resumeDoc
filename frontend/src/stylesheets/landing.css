@@ -41,8 +41,18 @@ footer {
   margin-bottom: 30px;
 }
 
-#login_form {
+#border-box {
   margin-top: 100px;
   margin-bottom: 30px;
   vertical-align: middle;
+  box-shadow: 10px 15px 10px 0px rgba(0, 0, 0, 0.38);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+#banner {
+  margin-top: 100px;
 }

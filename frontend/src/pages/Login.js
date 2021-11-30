@@ -37,6 +37,11 @@ const Login = () => {
 
   return (
     <main>
+      <center id="banner">
+        <h1>ResumeDoc</h1>
+        <h4 id="tag-line">Build a Compelling Professional Resume in Minutes</h4>
+      </center>
+
       <center id="login_form">
         <form onSubmit={handleSubmit}>
           <div className="form-inner">

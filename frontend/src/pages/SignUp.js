@@ -60,6 +60,7 @@ const SignUp = () => {
                   type="text"
                   name="first_name"
                   id="first_name"
+                  required
                   onChange={(e) => setFirstName(e.target.value)}
                 />
               </label>
@@ -71,6 +72,7 @@ const SignUp = () => {
                   type="text"
                   name="last_name"
                   id="last_name"
+                  required
                   onChange={(e) => setLastName(e.target.value)}
                 />
               </label>
@@ -82,6 +84,7 @@ const SignUp = () => {
                   type="text"
                   name="login_email"
                   id="login_email"
+                  required
                   onChange={(e) => setLogiEmail(e.target.value)}
                 />
               </label>
@@ -93,6 +96,7 @@ const SignUp = () => {
                   type="password"
                   name="password"
                   id="password"
+                  required
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </label>

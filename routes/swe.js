@@ -10,12 +10,12 @@ const sweModuleDB = require("../db/sweModuleDB.js");
 router.post("/", async (req, res) => {
   // define a resume array to store objects of resumes
   let body = req.body;
-  const resumes = await sweModuleDB.getAllResumes(body);
+  const resumeArray = await sweModuleDB.getAllResumes(body);
   console.log("swe.js: module loaded...");
-  console.log(resume);
+  console.log("SWE ROUTER:" + resumeArray);
 
   // send back data in JSON format to calling frontend script
-  res.json(resumes);
+  res.json(resumeArray);
 });
 
 // route to create resume

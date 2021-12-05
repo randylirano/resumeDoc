@@ -56,3 +56,12 @@ footer {
 #banner {
   margin-top: 100px;
 }
+
+#cardslist {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.Card {
+  margin-left: 100px;
+}

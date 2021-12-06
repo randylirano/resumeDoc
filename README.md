@@ -68,6 +68,6 @@ Once the local database has been created, follow these steps to run locally:
 
 ### Relevant Links
 [Demo](https://resume-doc.herokuapp.com/)
-[Video](to be uploaded)
+[Video] https://www.youtube.com/watch?v=-6xqQKdKb9c
 [Slides] https://docs.google.com/presentation/d/1BTYYXypbosWAm4gJ2Wu3WdDcv5MKs_HqppMUeoTTZis/edit?usp=sharing
 [Class](https://johnguerra.co/classes/webDevelopment_fall_2021/)

@@ -7,6 +7,7 @@ const uri = process.env.MONGO_URL || "mongodb://localhost:27017";
 // global variables
 const DB_NAME = "resumeDoc";
 const COLLECTION = "SWE_Resumes";
+const USERCOL = "Users";
 
 // method to return all resumes from this collection
 async function getAllResumes(credentialObject) {
@@ -19,7 +20,20 @@ async function getAllResumes(credentialObject) {
     await client.connect();
     console.log("sweModuleDB.js: db connection established...");
 
-    let query = [
+    // query parameter for user collection
+    let userQuery = {
+      "credential.login_email": { login_email },
+    };
+
+    // get the currently active user
+    let activeUser = await db.collection(USERCOL).find(userQuery).toArray;
+
+    console.log("ACTIVE USERS: " + activeUser);
+
+    // get the resume ids of the current active user
+    let resumeIds = activeUser[0].swe_resume_id;
+
+    /* let query = [
       {
         $match: {
           "credential.login_email": { login_email },
@@ -42,8 +56,14 @@ async function getAllResumes(credentialObject) {
         },
       },
     ];
+*/
+    console.log("RESUME IDS " + resumeIds);
+    //   return await db.collection(COLLECTION).aggregate(query).toArray();
 
-    return await db.collection(COLLECTION).aggregate(query).toArray();
+    //let temp = await db.collection(COLLECTION).find(query).toArray();
+
+    //console.log(temp);
+    return;
   } finally {
     await client.close();
   }

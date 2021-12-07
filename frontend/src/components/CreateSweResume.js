@@ -20,7 +20,8 @@ const CreateResume = (props) => {
 
   // template object to be populated by the form input
   let resumeObject = {
-    user: { userEmail },
+    author: userEmail,
+    resumeTitle: "",
     fullName: "",
     schoolAndMajor: "",
     schoolDates: "",
@@ -41,7 +42,7 @@ const CreateResume = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    //console.log(resume);
+    console.log(resume);
 
     // send form data to backend route
     // show user confirmation message
@@ -76,6 +77,26 @@ const CreateResume = (props) => {
       </div>
       <div className="row">
         <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="resumeTitle" className="form-label">
+              Enter document title
+            </label>
+            <input
+              type="text"
+              placeholder="ex: 'Draft Resume'"
+              className="form-control"
+              required
+              id="resumeTitle"
+              aria-describedby="emailHelp"
+              value={resume.resumeTitle}
+              onChange={(e) =>
+                setResume({ ...resume, resumeTitle: e.target.value })
+              }
+            />
+            <div id="entryHelp" className="form-text">
+              Required.
+            </div>
+          </div>
           <div className="mb-3">
             <label htmlFor="fullName" className="form-label">
               Enter your full name

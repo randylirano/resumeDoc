@@ -34,7 +34,7 @@ async function getCredential(inputCredential) {
       },
     };
 
-    console.log("QUERY PARAMETER", queryParams)
+    console.log("QUERY PARAMETER", queryParams);
 
     let queryResult = await usersCol.find(queryParams).toArray();
     console.log("DB QUERY RESULT", queryResult);

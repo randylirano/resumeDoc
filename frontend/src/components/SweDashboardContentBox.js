@@ -4,6 +4,7 @@ import { useState } from "react";
 import img from "../images/new-document.png";
 import "../stylesheets/swe-dashboard.css";
 import { useNavigate } from "react-router-dom";
+import LoadSweCard from "./LoadSweCard";
 
 // Written by Kennedy Ezumah
 
@@ -21,27 +22,27 @@ const SweDashboardContentBox = (props) => {
   // eslint-disable-next-line no-unused-vars
   const [userEmail] = useState(props.login_email);
   // eslint-disable-next-line no-unused-vars
-  const displayResume = async (userEmail) => {
-    const resumeList = document.querySelector("#default-text");
-    resumeList.innerHTML = "";
-    resumeList("");
-    // TO DO
-    // perform database retrieval
-    // should return pointers to resume entries if successful -> pass to redraw function
-    // use Element.innerHTML selector API for #default-text
-    // otherwise, should return default message
-    // eslint-disable-next-line no-unused-vars
-    const res = await fetch("api/swe/", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(userEmail),
-    });
+  //const displayResume = async (userEmail) => {
+  // const resumeList = document.querySelector("#default-text");
+  // resumeList.innerHTML = "";
+  //resumeList("");
+  // TO DO
+  // perform database retrieval
+  // should return pointers to resume entries if successful -> pass to redraw function
+  // use Element.innerHTML selector API for #default-text
+  // otherwise, should return default message
+  // eslint-disable-next-line no-unused-vars
+  //const res = await fetch("api/swe/", {
+  //  method: "POST",
+  //  headers: { "Content-Type": "application/json" },
+  //  body: JSON.stringify(userEmail),
+  //});
 
-    //if (res.ok) {
+  //if (res.ok) {
 
-    //}
-    return userEmail;
-  };
+  //}
+  //return userEmail;
+  //};
 
   const navigate = useNavigate();
   return (
@@ -82,8 +83,10 @@ const SweDashboardContentBox = (props) => {
       <div className="row">
         <center>
           <div className="row border" id="section-listings">
-            <center id="default-text">
-              <h4>No Existing Resumes</h4>
+            <center>
+              <h4>
+                <LoadSweCard login_email={userEmail} />
+              </h4>
             </center>
           </div>
         </center>

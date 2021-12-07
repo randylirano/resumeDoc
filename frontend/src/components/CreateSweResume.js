@@ -20,6 +20,7 @@ const CreateResume = (props) => {
 
   // template object to be populated by the form input
   let resumeObject = {
+    author: userEmail,
     resumeTitle: "",
     fullName: "",
     schoolAndMajor: "",

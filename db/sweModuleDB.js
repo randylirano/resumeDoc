@@ -10,11 +10,10 @@ const COLLECTION = "SWE_Resumes";
 const USERCOL = "Users";
 
 // method to return all resumes from this collection
-async function getAllResumes(credentialObject) {
+async function getSWEResumes(activeEmail) {
   const client = new MongoClient(uri);
   const db = client.db(DB_NAME);
-  console.log("DB EMAIL:" + credentialObject.login_email);
-  let login_email = credentialObject.login_email;
+  console.log("DB EMAIL:" + activeEmail);
 
   try {
     await client.connect();
@@ -22,48 +21,26 @@ async function getAllResumes(credentialObject) {
 
     // query parameter for user collection
     let userQuery = {
-      "credential.login_email": { login_email },
+      "credential.login_email": activeEmail,
     };
 
-    // get the currently active user
-    let activeUser = await db.collection(USERCOL).find(userQuery).toArray;
+    // query the users collection to get the object representing the current active user
+    let activeUser = await db.collection(USERCOL).find(userQuery).toArray();
+    console.log("ACTIVE USER IS: ", activeUser);
 
-    console.log("ACTIVE USERS: " + activeUser);
+    // store the value of the "swe_resume_id" key (an array of resume ids) in a new variable
+    let sweResumeIds = activeUser[0].swe_resume_id;
 
-    // get the resume ids of the current active user
-    let resumeIds = activeUser[0].swe_resume_id;
+    // query the swe resume collection to get an array of all objects whos "swe_resume_id" values match those in the sweResumeIds array
+    let sweResumeObjectList = await db
+      .collection(COLLECTION)
+      .find({ swe_resume_id: { $in: sweResumeIds } })
+      .toArray();
 
-    /* let query = [
-      {
-        $match: {
-          "credential.login_email": { login_email },
-        },
-      },
-      {
-        $lookup: {
-          from: "SWE_Resumes",
-          localField: "swe_resume_id",
-          foreignField: "swe_resume_id",
-          as: "User_SWE_Resumes",
-        },
-      },
-      {
-        $project: {
-          _id: 0,
-          first_name: 1,
-          last_name: 1,
-          User_SWE_Resumes: 1,
-        },
-      },
-    ];
-*/
-    console.log("RESUME IDS " + resumeIds);
-    //   return await db.collection(COLLECTION).aggregate(query).toArray();
+    console.log("RESUME LIST IS:" + sweResumeObjectList);
 
-    //let temp = await db.collection(COLLECTION).find(query).toArray();
-
-    //console.log(temp);
-    return;
+    // return the result
+    return sweResumeObjectList;
   } finally {
     await client.close();
   }
@@ -100,9 +77,10 @@ async function createNewResume(entryObject) {
 
     await db.collection(COLLECTION).insertOne(newResumeEntry);
     // add new resume_id to the list of swe resumes owned by the user in the user collection
+    console.log("DB User collection about to be updated...");
     return await db
       .collection("Users")
-      .update(
+      .updateOne(
         { "credential.login_email": userEmail },
         { $addToSet: { swe_resume_id: newResumeEntry.swe_resume_id } }
       );
@@ -111,5 +89,5 @@ async function createNewResume(entryObject) {
   }
 }
 
-module.exports.getAllResumes = getAllResumes;
+module.exports.getSWEResumes = getSWEResumes;
 module.exports.createNewResume = createNewResume;

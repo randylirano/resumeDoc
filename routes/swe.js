@@ -5,12 +5,13 @@ const express = require("express");
 const router = express.Router();
 const sweModuleDB = require("../db/sweModuleDB.js");
 
-// route for loading all swe resume data of a given user
-// an object with fields {userEmail : "XYZ"} is received in the body
+/* route for retrieving all swe resume data of a given user
+   an object with fields {login_email : "XYZ"} is received in the body
+*/
 router.post("/", async (req, res) => {
   // define a resume array to store objects of resumes
   let body = req.body;
-  const resumeArray = await sweModuleDB.getAllResumes(body);
+  const resumeArray = await sweModuleDB.getSWEResumes(body.login_email);
   console.log("swe.js: module loaded...");
   console.log("SWE ROUTER:" + resumeArray);
 
@@ -24,10 +25,10 @@ router.post("/create", async (req, res) => {
   let statusCode = 200;
 
   // define a resume array to store objects of resumes
-  let body = req.body;
+  let resumeObject = req.body;
 
   try {
-    await sweModuleDB.createNewResume(body);
+    await sweModuleDB.createNewResume(resumeObject);
   } catch (error) {
     statusCode = 500;
     data.message = error.message;

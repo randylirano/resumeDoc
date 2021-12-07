@@ -64,6 +64,9 @@ async function createUser(newUser) {
       },
       first_name: newUser.first_name,
       last_name: newUser.last_name,
+      swe_resume_id: [],
+      "ux/ui_resume_id": [],
+      pm_resume_id: [],
     };
 
     return await usersCol.insertOne(newUserInfo);

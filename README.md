@@ -23,8 +23,6 @@ Create New Resume 2/2:
 <img width="1169" alt="new-resume-2" src="https://user-images.githubusercontent.com/20258196/143971795-6c7c0ff6-548f-4071-9c1e-80a76954a120.png">
 
 
-
-
 ## How-To-Use
 There are 2 ways to use this project.
 1. Visit our deployed application at Heroku. (link below)

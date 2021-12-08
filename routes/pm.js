@@ -7,6 +7,14 @@ const router = express.Router();
 // import module to interact with DB
 const pmModuleDB = require("../db/pmResumesModuleDB.js");
 
+// route to get all resume of the current active user
+router.post("/", async (req, res) => {
+  let body = req.body;
+  const resumeArray = await pmModuleDB.getPMResumes(body.login_email);
+
+  res.json(resumeArray);
+});
+
 // route to create resume
 router.post("/create", async (req, res) => {
   let data = { message: "No issues!" };

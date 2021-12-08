@@ -21,40 +21,25 @@ async function getPMResumes(activeEmail) {
   try {
     await client.connect();
 
-    // const usersDB = client.db(DB_NAME);
     const usersCol = client.db(DB_NAME).collection(USERS_COL);
+    const pmResumesCol = client.db(DB_NAME).collection(PM_RESUMES_COL);
 
-    // query parameter
-    const queryParams = [
-      {
-        $match: {
-          "credential.login_email": {activeEmail},
-        },
-      },
-      {
-        $lookup: {
-          from: "PM_Resumes",
-          localField: "pm_resume_id",
-          foreignField: "pm_resume_id",
-          as: "User_PM_Resumes",
-        },
-      },
-      {
-        $project: {
-          _id: 0,
-          first_name: 1,
-          last_name: 1,
-          User_PM_Resumes: 1,
-        },
-      },
-    ];
+    // query parameter for user collection
+    let userQuery = {
+      "credential.login_email": activeEmail,
+    };
 
-    console.log("QUERY PARAMETER", queryParams);
+    // query the users collection to get the object representing the current active user
+    let activeUser = await usersCol.find(userQuery).toArray();
+    console.log("ACTIVE USER IS: ", activeUser);
 
-    let queryResult = await usersCol.aggregate(queryParams).toArray();
-    // console.log("DB QUERY RESULT", queryResult);
+    // store the value of the "pm_resume_id" key (an array of resume ids) in a new variable
+    let pmResumeIds = activeUser[0].pm_resume_id;
 
-    return queryResult;
+    // query the swe resume collection to get an array of all objects whos "swe_resume_id" values match those in the sweResumeIds array
+    let pmResumeObjectList = await pmResumesCol.find({ pm_resume_id: { $in: pmResumeIds } }).toArray();
+
+    return pmResumeObjectList;
   } finally {
     await client.close();
   }
@@ -85,17 +70,20 @@ async function createPmResume(entryObject) {
       descriptionThree: entryObject.descriptionThree,
       techSkillsList: entryObject.techSkillsList,
       interestsList: entryObject.interestsList,
-    }
+    };
 
     await pmResumesCol.insertOne(newResumeEntry);
     // add new resume_id to the list of pm resumes owned by the user in the user collection
-    return await client.db(DB_NAME).collection("Users").updateOne(
-    { "credential.login_email": userEmail },
-    { $addToSet: { pm_resume_id: newResumeEntry.pm_resume_id } })
+    return await client
+      .db(DB_NAME)
+      .collection("Users")
+      .updateOne(
+        { "credential.login_email": userEmail },
+        { $addToSet: { pm_resume_id: newResumeEntry.pm_resume_id } }
+      );
   } finally {
     await client.close();
   }
-
 }
 
 // Export modules

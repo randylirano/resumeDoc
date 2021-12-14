@@ -32,6 +32,7 @@ const LoadSweCard = (props) => {
     );
   };
 
+
   // Use useEffect to restrict reloading of the fetch side effect to only once after initial rendering
   useEffect(() => {
     async function loadResumes(userObject) {

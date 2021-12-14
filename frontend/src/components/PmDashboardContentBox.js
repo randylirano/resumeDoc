@@ -4,7 +4,10 @@ import { useState } from "react";
 import img from "../images/new-document.png";
 import "../stylesheets/pm-dashboard.css";
 import { useNavigate } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
 import LoadPmCard from "./LoadPmCard";
+// eslint-disable-next-line no-unused-vars
+import PmResumeCardList from "./PmResumeCardList";
 
 // Author: Randy Lirano
 
@@ -30,6 +33,8 @@ const PmDashboardContentBox = (props) => {
   //   // otherwise, should return default message
   //   return userEmail;
   // };
+
+  
 
   const navigate = useNavigate();
   return (
@@ -71,7 +76,8 @@ const PmDashboardContentBox = (props) => {
         <center>
           <div className="row border" id="section-listings">
             <center>
-              <h4><LoadPmCard login_email={userEmail} /></h4>
+              {/*<LoadPmCard login_email={userEmail} />*/}
+              <PmResumeCardList login_email={userEmail} />
             </center>
           </div>
         </center>

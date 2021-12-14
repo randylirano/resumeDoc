@@ -8,6 +8,7 @@ import UxUiDashboard from "./pages/UxUiDashboard";
 import CreateSweResumePage from "./pages/CreateSweResumePage";
 import PmDashboard from "./pages/PmDashboard.js";
 import CreatePmResumePage from "./pages/CreatePmResumePage";
+import TestResumeDetail from "./pages/TestResumeDetail";
 
 function App() {
   return (
@@ -21,12 +22,15 @@ function App() {
         <Route
           exact
           path="/create-swe-resume"
-          element={<CreateSweResumePage />}/>
+          element={<CreateSweResumePage />}
+        />
         <Route exact path="/pm" element={<PmDashboard />} />
         <Route
           exact
           path="/create-pm-resume"
-          element={<CreatePmResumePage />}/>
+          element={<CreatePmResumePage />}
+        />
+        <Route exact path="/resume-detail" element={<TestResumeDetail />} />
       </Routes>
     </Router>
   );

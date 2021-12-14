@@ -9,6 +9,11 @@ import "../stylesheets/swe-dashboard.css";
 
 // Author: Randy Lirano
 
+// Card to display the number of resume
+// export function ResumeCard({ resume }) {
+//   return ();
+// }
+
 const LoadPmCard = (props) => {
   const [userEmail] = useState(props.login_email);
   const [resumeArray, setResumeArray] = useState([]);
@@ -56,6 +61,7 @@ const LoadPmCard = (props) => {
   else {
     return (
       <div id="cards-list">
+        {/*<div className="row">{resumeArray.map(renderResume)}</div>*/}
         <Row>{resumeArray.map(renderResume)}</Row>
       </div>
     );

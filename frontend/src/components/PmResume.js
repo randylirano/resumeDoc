@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { useState } from "react";
 import "../stylesheets/landing.css";
-import img from "../images/swe.png";
+import img from "../images/pm.png";
 // Written by Randy Lirano
 
 const PmResume = (props) => {

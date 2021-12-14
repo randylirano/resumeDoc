@@ -39,6 +39,10 @@ async function getPMResumes(activeEmail) {
     // query the swe resume collection to get an array of all objects whos "swe_resume_id" values match those in the sweResumeIds array
     let pmResumeObjectList = await pmResumesCol.find({ pm_resume_id: { $in: pmResumeIds } }).toArray();
 
+    // for (let resume of pmResumeObjectList) {
+    //   console.log(resume);
+    // }
+
     return pmResumeObjectList;
   } finally {
     await client.close();

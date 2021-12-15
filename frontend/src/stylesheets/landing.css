@@ -68,3 +68,15 @@ footer {
 .Card {
   margin-left: 100px;
 }
+
+#delete-button {
+  background-color: red;
+}
+
+#page-heading {
+  margin-top: 50px;
+}
+
+#return-button {
+  margin-left: 5px;
+}

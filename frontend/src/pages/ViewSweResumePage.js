@@ -25,7 +25,6 @@ const ViewSweResumePage = () => {
 
   const handleDelete = async (event) => {
     event.preventDefault();
-    console.log("`{resume.Title}`resume deleted");
 
     // delete resume
     resume.author = login_email;
@@ -36,13 +35,22 @@ const ViewSweResumePage = () => {
     });
 
     if (res.ok) {
-      console.log("Resume successfully deleted!");
+      console.log(
+        "Resume successfully deleted! Redirecting to swe listings page!"
+      );
       navigate("/swe", {
         state: { login_email: login_email },
       });
     } else {
-      alert("Deletion unsucessful");
+      alert("Deletion unsuccessful");
     }
+  };
+
+  const handleReturn = async (event) => {
+    event.preventDefault();
+    navigate("/swe", {
+      state: { login_email: login_email },
+    });
   };
 
   return (
@@ -50,26 +58,31 @@ const ViewSweResumePage = () => {
       <div className="row">
         <NavBarOther login_email={login_email} />
         <center>
-          <div class="card text-center" id="view-box">
-            <div class="card-header">
-              <ul class="nav nav-pills card-header-pills">
-                <li class="nav-item">
-                  <Button class="nav-link active" href="#">
-                    Active
+          <h1 id="page-heading">Resume View</h1>
+          <div className="card text-center" id="view-box">
+            <div className="card-header">
+              <ul className="nav nav-pills card-header-pills">
+                <li className="nav-item">
+                  <Button
+                    className="btn btn-primary"
+                    id="delete-button"
+                    onClick={handleDelete}
+                  >
+                    Delete
+                  </Button>
+                  <Button
+                    className="btn btn-primary"
+                    id="return-button"
+                    onClick={handleReturn}
+                  >
+                    Return to Previous Page
                   </Button>
                 </li>
               </ul>
             </div>
-            <div class="card-body">
-              <h5 class="card-title">{resume.resumeTitle}</h5>
-              <p class="card-text">Randy's Function Here</p>
-              <Button
-                class="btn btn-primary"
-                id="delete-button"
-                onClick={handleDelete}
-              >
-                Delete
-              </Button>
+            <div className="card-body">
+              <h5 className="card-title">{resume.resumeTitle}</h5>
+              <p className="card-text">Randy's function goes here</p>
             </div>
           </div>
         </center>

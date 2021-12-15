@@ -45,6 +45,7 @@ router.delete("/delete", async (req, res) => {
   let resumeObject = req.body;
 
   try {
+    console.log("DELETE CONSOLE LOG 1");
     await sweModuleDB.deleteResume(resumeObject);
   } catch (error) {
     statusCode = 500;

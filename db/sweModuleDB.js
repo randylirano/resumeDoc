@@ -89,5 +89,32 @@ async function createNewResume(entryObject) {
   }
 }
 
+// method to delete an existing SWE resume in the database
+async function deleteResume(entryObject) {
+  const client = new MongoClient(uri);
+  let userEmail = entryObject.author;
+  let credential = { login_email: userEmail };
+  const db = client.db(DB_NAME);
+
+  try {
+    await client.connect();
+    console.log("sweModuleDB.js: db connection established...");
+    let query = entryObject;
+
+    // 1st db operation: remove the resume from the swe resume collection
+    await db.collection(COLLECTION).remove(query, { justOne: true });
+
+    // 2nd db operation: remove the resume from the resume list of the user in the user's
+    return await db
+      .collection("Users")
+      .updateOne(
+        { "credential.login_email": userEmail },
+        { $pull: { swe_resume_id: newResumeEntry.swe_resume_id } }
+      );
+  } finally {
+    await client.close();
+  }
+}
+
 module.exports.getSWEResumes = getSWEResumes;
 module.exports.createNewResume = createNewResume;

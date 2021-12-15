@@ -21,7 +21,7 @@ router.post("/", async (req, res) => {
 
 // route to create resume
 router.post("/create", async (req, res) => {
-  let data = { message: "No issues!" };
+  let data = { message: "No issues with creating!" };
   let statusCode = 200;
 
   // define a resume array to store objects of resumes
@@ -33,8 +33,23 @@ router.post("/create", async (req, res) => {
     statusCode = 500;
     data.message = error.message;
   }
-  // send back response
   res.status(statusCode).send(JSON.stringify(data));
 });
 
+// route to delete resume
+router.delete("/delete", async (req, res) => {
+  let data = { message: "No issues with deleting!" };
+  let statusCode = 200;
+
+  // define a resume array to store objects of resumes
+  let resumeObject = req.body;
+
+  try {
+    await sweModuleDB.deleteResume(resumeObject);
+  } catch (error) {
+    statusCode = 500;
+    data.message = error.message;
+  }
+  res.status(statusCode).send(JSON.stringify(data));
+});
 module.exports = router;

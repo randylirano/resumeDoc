@@ -8,6 +8,7 @@ import UxUiDashboard from "./pages/UxUiDashboard";
 import CreateSweResumePage from "./pages/CreateSweResumePage";
 import PmDashboard from "./pages/PmDashboard.js";
 import CreatePmResumePage from "./pages/CreatePmResumePage";
+import ViewSweResumePage from "./pages/ViewSweResumePage";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           path="/create-pm-resume"
           element={<CreatePmResumePage />}
         />
-        <Route exact path="/view-resume" element={ViewSweResume} />
+        <Route exact path="/view-swe-resume" element={<ViewSweResumePage />} />
       </Routes>
     </Router>
   );

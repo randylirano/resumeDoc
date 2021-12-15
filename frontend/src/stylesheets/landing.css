@@ -7,6 +7,9 @@ body {
   padding-top: 10px;
 }
 
+iframe {
+  border: none;
+}
 /*This extends the Background Styling to the Full Page Length
 */
 html,

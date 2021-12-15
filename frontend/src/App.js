@@ -9,12 +9,14 @@ import CreateSweResumePage from "./pages/CreateSweResumePage";
 import PmDashboard from "./pages/PmDashboard.js";
 import CreatePmResumePage from "./pages/CreatePmResumePage";
 import ViewSweResumePage from "./pages/ViewSweResumePage";
+import ExternalLanding from "./pages/ExternalLanding";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Login />} />
+        <Route exact path="/" element={<ExternalLanding />} />
+        <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/landing" element={<Landing />} />
         <Route exact path="/swe" element={<SweDashboard />} />

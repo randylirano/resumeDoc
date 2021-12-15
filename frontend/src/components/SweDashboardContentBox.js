@@ -67,7 +67,7 @@ const SweDashboardContentBox = (props) => {
             </center>
           </div>
         </center>
-        <footer>
+        <footer id="external-footer">
           <center>© 2021 ResumeDoc</center>
         </footer>
       </div>

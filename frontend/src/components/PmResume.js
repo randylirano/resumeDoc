@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { useState } from "react";
 import "../stylesheets/landing.css";
-import img from "../images/swe.png";
+import img from "../images/pm.png";
 // Written by Randy Lirano
 
 const PmResume = (props) => {
@@ -34,7 +34,8 @@ const PmResume = (props) => {
           type="button"
           className="btn btn-outline-secondary"
           onClick={() =>
-            navigate("/pm", { state: { login_email: login_email } })}
+            navigate("/pm", { state: { login_email: login_email } })
+          }
         >
           Product Management
         </button>

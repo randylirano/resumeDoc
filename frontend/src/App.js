@@ -21,12 +21,15 @@ function App() {
         <Route
           exact
           path="/create-swe-resume"
-          element={<CreateSweResumePage />}/>
+          element={<CreateSweResumePage />}
+        />
         <Route exact path="/pm" element={<PmDashboard />} />
         <Route
           exact
           path="/create-pm-resume"
-          element={<CreatePmResumePage />}/>
+          element={<CreatePmResumePage />}
+        />
+        <Route exact path="/view-resume" element={ViewSweResume} />
       </Routes>
     </Router>
   );

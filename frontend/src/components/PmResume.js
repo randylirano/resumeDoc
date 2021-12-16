@@ -34,7 +34,8 @@ const PmResume = (props) => {
           type="button"
           className="btn btn-outline-secondary"
           onClick={() =>
-            navigate("/pm", { state: { login_email: login_email } })}
+            navigate("/pm", { state: { login_email: login_email } })
+          }
         >
           Product Management
         </button>

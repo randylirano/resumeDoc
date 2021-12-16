@@ -7,6 +7,7 @@ import { Card, Row, Col, Container } from "react-bootstrap";
 // eslint-disable-next-line no-unused-vars
 import Button from "react-bootstrap/Button";
 import img from "../images/default-document.png";
+import { useNavigate } from "react-router-dom";
 import "../stylesheets/swe-dashboard.css";
 
 // Written by Kennedy Ezumah
@@ -14,6 +15,7 @@ import "../stylesheets/swe-dashboard.css";
 const LoadSweCard = (props) => {
   const [userEmail] = useState(props.login_email);
   const [resumeArray, setResumeArray] = useState([]);
+  const navigate = useNavigate();
 
   const defaultMessage = "No Resumes Exist";
   let userObject = { login_email: userEmail };
@@ -26,7 +28,17 @@ const LoadSweCard = (props) => {
         <Card.Body>
           <Card.Title>{card.resumeTitle}</Card.Title>
           <Card.Text></Card.Text>
-          <Button variant="primary">View</Button>
+          <Button
+            type="button"
+            variant="primary"
+            onClick={() =>
+              navigate("/view-swe-resume", {
+                state: { login_email: userEmail, resumeObject: card },
+              })
+            }
+          >
+            View
+          </Button>
         </Card.Body>
       </Card>
     );

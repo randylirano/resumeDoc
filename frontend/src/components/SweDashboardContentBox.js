@@ -19,9 +19,8 @@ const SweDashboardContentBox = (props) => {
             uses this object to perform the database query
   */
 
-  // eslint-disable-next-line no-unused-vars
   const [userEmail] = useState(props.login_email);
-  
+
   const navigate = useNavigate();
   return (
     <div className="row" id="main-content">
@@ -69,7 +68,7 @@ const SweDashboardContentBox = (props) => {
             </center>
           </div>
         </center>
-        <footer>
+        <footer id="external-footer">
           <center>© 2021 ResumeDoc</center>
         </footer>
       </div>

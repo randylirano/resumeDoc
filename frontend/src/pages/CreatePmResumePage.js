@@ -6,7 +6,8 @@ import { useHistory, useLocation } from "react-router-dom";
 import UxUiResume from "../components/UxUiResume";
 // eslint-disable-next-line no-unused-vars
 import NavBarOther from "../components/NavBarOther";
-import CreatePmResume from "../components/CreatePmResume";
+// import CreatePmResume from "../components/CreatePmResume";
+import PmResumeForm from "../components/PmResumeForm.js";
 import "../stylesheets/landing.css";
 
 // Author: Randy Lirano
@@ -19,7 +20,8 @@ const CreatePmResumePage = () => {
     <div className="container">
       <div className="row">
         <NavBarOther login_email={login_email} />
-        <CreatePmResume login_email={login_email} />
+        {/*<CreatePmResume login_email={login_email} />*/}
+        <PmResumeForm login_email={login_email} />
       </div>
     </div>
   );

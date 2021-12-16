@@ -4,7 +4,7 @@ import { useState } from "react";
 import img from "../images/new-document.png";
 import "../stylesheets/swe-dashboard.css";
 import { useNavigate } from "react-router-dom";
-import LoadSweCard from "./LoadSweCard";
+import SweResumeCardList from "./SweResumeCardList";
 
 // Written by Kennedy Ezumah
 
@@ -62,7 +62,8 @@ const SweDashboardContentBox = (props) => {
           <div className="row border" id="section-listings">
             <center>
               <h4>
-                <LoadSweCard login_email={userEmail} />
+                {/* <LoadSweCard login_email={userEmail} /> */}
+                <SweResumeCardList login_email={userEmail} />
               </h4>
             </center>
           </div>

@@ -27,8 +27,8 @@ const UxUiResume = (props) => {
         <img
           src={img}
           alt="an icon showing a cartoon of a paint palette."
-          width="200"
-          height="200"
+          width="350"
+          height="350"
         />
       </center>
       <center>

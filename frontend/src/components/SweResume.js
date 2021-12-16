@@ -26,8 +26,8 @@ const SweResume = (props) => {
         <img
           src={img}
           alt="an icon showing a cartoon of three people working around an open laptop. There is code on the screen."
-          width="200"
-          height="200"
+          width="350"
+          height="350"
         />
       </center>
       <center>

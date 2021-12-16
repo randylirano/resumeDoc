@@ -25,8 +25,8 @@ const PmResume = (props) => {
         <img
           src={img}
           alt="an icon showing a cartoon of three teammates at work. Two are holding laptops, while the third is holding a cup of coffee."
-          width="200"
-          height="200"
+          width="350"
+          height="350"
         />
       </center>
       <center>

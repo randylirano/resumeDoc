@@ -20,7 +20,7 @@ function NavBar(props) {
   const [visibleEmail] = useState(props.login_email);
   const navigate = useNavigate();
   return (
-    <div className="row" role="navigation">
+    <div className="row" role="navigation" id="NavBar">
       <div className="col-8" id="left-half-navbar">
         <h2>
           <img

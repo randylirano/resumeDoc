@@ -55,7 +55,7 @@ const PmDashboardContentBox = (props) => {
           <center>
             <button
               type="button"
-              className="btn btn-outline-secondary"
+              className="btn btn-info"
               onClick={() =>
                 navigate("/create-pm-resume", {
                   state: { login_email: userEmail },
@@ -71,7 +71,9 @@ const PmDashboardContentBox = (props) => {
         <center>
           <div className="row border" id="section-listings">
             <center>
-              <h4><LoadPmCard login_email={userEmail} /></h4>
+              <h4>
+                <LoadPmCard login_email={userEmail} />
+              </h4>
             </center>
           </div>
         </center>

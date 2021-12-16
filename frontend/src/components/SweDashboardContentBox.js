@@ -45,7 +45,7 @@ const SweDashboardContentBox = (props) => {
           <center>
             <button
               type="button"
-              className="btn btn-outline-secondary"
+              className="btn btn-info"
               onClick={() =>
                 navigate("/create-swe-resume", {
                   state: { login_email: userEmail },

@@ -34,7 +34,8 @@ const UxUiResume = (props) => {
       <center>
         <button
           type="button"
-          className="btn btn-outline-secondary"
+          id="ux-ui-button"
+          className="btn btn-info"
           onClick={() =>
             navigate("/uxui", { state: { login_email: login_email } })
           }

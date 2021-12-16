@@ -85,3 +85,14 @@ footer {
 #return-button {
   margin-left: 5px;
 }
+
+#swe-button,
+#ux-ui-button,
+#pm-button {
+  font-size: 20px;
+  text-decoration-color: whitesmoke;
+}
+
+#landing-footer {
+  margin-top: 40px;
+}

@@ -33,7 +33,8 @@ const SweResume = (props) => {
       <center>
         <button
           type="button"
-          className="btn btn-outline-secondary"
+          id="swe-button"
+          className="btn btn-info"
           onClick={() =>
             navigate("/swe", { state: { login_email: login_email } })
           }

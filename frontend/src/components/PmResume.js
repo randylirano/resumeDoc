@@ -32,7 +32,8 @@ const PmResume = (props) => {
       <center>
         <button
           type="button"
-          className="btn btn-outline-secondary"
+          id="pm-button"
+          className="btn btn-info"
           onClick={() =>
             navigate("/pm", { state: { login_email: login_email } })
           }

@@ -29,7 +29,6 @@ function App() {
           path="/create-pm-resume"
           element={<CreatePmResumePage />}
         />
-        <Route exact path="/view-resume" element={ViewSweResume} />
       </Routes>
     </Router>
   );

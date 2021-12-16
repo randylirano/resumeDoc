@@ -3,10 +3,7 @@ import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { useHistory, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-// eslint-disable-next-line
-import UxUiResume from "../components/UxUiResume";
 import Button from "react-bootstrap/Button";
-// eslint-disable-next-line no-unused-vars
 import NavBarOther from "../components/NavBarOther";
 // eslint-disable-next-line no-unused-vars
 import { Card, Row, Col, Container } from "react-bootstrap";
@@ -16,9 +13,9 @@ import "../stylesheets/landing.css";
 import "../components/ResumeTemplateResources/ResumeTemplate.css";
 import ResumeDetail from "../components/ResumeDetail.js";
 
-// Written by Kennedy Ezumah
+// Written by Randy Lirano
 
-const ViewSweResumePage = () => {
+const ViewPmResumePage = () => {
   const location = useLocation();
   const login_email = location.state.login_email;
   const resume = location.state.resumeObject;
@@ -29,7 +26,7 @@ const ViewSweResumePage = () => {
 
     // delete resume
     resume.author = login_email;
-    const res = await fetch("api/swe/delete", {
+    const res = await fetch("api/pm/delete", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(resume),
@@ -37,9 +34,9 @@ const ViewSweResumePage = () => {
 
     if (res.ok) {
       console.log(
-        "Resume successfully deleted! Redirecting to swe listings page!"
+        "Resume successfully deleted! Redirecting to PM listings page!"
       );
-      navigate("/swe", {
+      navigate("/pm", {
         state: { login_email: login_email },
       });
     } else {
@@ -49,7 +46,7 @@ const ViewSweResumePage = () => {
 
   const handleReturn = async (event) => {
     event.preventDefault();
-    navigate("/swe", {
+    navigate("/pm", {
       state: { login_email: login_email },
     });
   };
@@ -92,4 +89,4 @@ const ViewSweResumePage = () => {
   );
 };
 
-export default ViewSweResumePage;
+export default ViewPmResumePage;

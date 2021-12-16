@@ -83,7 +83,7 @@ async function createPmResume(entryObject) {
         question_4: entryObject.work_experience.question_4,
       }],
       project: [{
-        name: entryObject.project.project_name,
+        name: entryObject.project.name,
         start_date: entryObject.project.start_date,
         end_date: entryObject.project.end_date,
         question_1: entryObject.project.question_1,
@@ -107,6 +107,34 @@ async function createPmResume(entryObject) {
   }
 }
 
+// method to delete an existing PM resume in the database
+async function deletePmResume(entryObject) {
+  const client = new MongoClient(uri);
+  let userEmail = entryObject.author;
+  let resumeId = entryObject.pm_resume_id;
+  let credential = { login_email: userEmail };
+  const db = client.db(DB_NAME);
+
+  try {
+    await client.connect();
+
+    let query = { pm_resume_id: resumeId };
+    console.log(query);
+
+    await db.collection(PM_RESUMES_COL).deleteOne(query);
+
+    return await db
+      .collection(USERS_COL)
+      .updateOne(
+        { "credential.login_email": userEmail },
+        { $pull: { pm_resume_id: resumeId } }
+      );
+  } finally {
+    await client.close();
+  }
+}
+
 // Export modules
 module.exports.getPMResumes = getPMResumes;
 module.exports.createPmResume = createPmResume;
+module.exports.deletePmResume = deletePmResume;

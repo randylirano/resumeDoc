@@ -8,17 +8,23 @@ import "../stylesheets/swe-dashboard.css";
 
 // Author: Kennedy Ezumah
 
-function ResumeCard({ resume }) {
+function ResumeCard({ resume , userEmail}) {
   const navigate = useNavigate();
 
-  
   return (
     <Card style={{ width: "10rem" }} id="individual-card">
       <Card.Img variant="top" src={img} height="100" width="75" />
       <Card.Body>
         <Card.Title>{resume.title}</Card.Title>
         <Card.Text></Card.Text>
-        <Button variant="primary" onClick={() => navigate("/resume-detail", {state: {"resume": resume}})}>
+        <Button
+          variant="primary"
+          onClick={() =>
+            navigate("/view-swe-resume", {
+              state: { login_email: userEmail, resumeObject: resume },
+            })
+          }
+        >
           View
         </Button>
       </Card.Body>
@@ -58,15 +64,11 @@ export function SweResumeCardList(props) {
 
   function renderResumeCards() {
     return resumes.map((p, i) => (
-      <ResumeCard key={`resume_${i}`} resume={p} ></ResumeCard>
+      <ResumeCard key={`resume_${i}`} resume={p} userEmail={userEmail}></ResumeCard>
     ));
   }
 
-  return (
-    <div className="row">
-      {renderResumeCards()}
-    </div>
-  );
+  return <div className="row">{renderResumeCards()}</div>;
 }
 
 export default SweResumeCardList;

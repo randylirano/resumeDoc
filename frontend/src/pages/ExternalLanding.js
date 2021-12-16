@@ -41,7 +41,7 @@ const ExternalLanding = () => {
                 type="button"
                 className="btn btn-info"
                 id="external-sign-in-button"
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/signup")}
               >
                 Create a Free Account
               </button>

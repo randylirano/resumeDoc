@@ -79,7 +79,7 @@ async function createNewResume(entryObject) {
         question_4: entryObject.work_experience.question_4,
       }],
       project: [{
-        name: entryObject.project.project_name,
+        name: entryObject.project.name,
         start_date: entryObject.project.start_date,
         end_date: entryObject.project.end_date,
         question_1: entryObject.project.question_1,

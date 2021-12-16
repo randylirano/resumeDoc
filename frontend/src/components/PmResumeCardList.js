@@ -8,7 +8,7 @@ import "../stylesheets/swe-dashboard.css";
 
 // Author: Randy Lirano
 
-function ResumeCard({ resume }) {
+function ResumeCard({ resume , userEmail}) {
   const navigate = useNavigate();
 
   
@@ -18,7 +18,14 @@ function ResumeCard({ resume }) {
       <Card.Body>
         <Card.Title>{resume.title}</Card.Title>
         <Card.Text></Card.Text>
-        <Button variant="primary" onClick={() => navigate("/resume-detail", {state: {"resume": resume}})}>
+        <Button
+          variant="primary"
+          onClick={() =>
+            navigate("/view-pm-resume", {
+              state: { login_email: userEmail, resumeObject: resume },
+            })
+          }
+        >
           View
         </Button>
       </Card.Body>
@@ -60,7 +67,7 @@ export function PmResumeCardList(props) {
 
   function renderResumeCards() {
     return resumes.map((p, i) => (
-      <ResumeCard key={`resume_${i}`} resume={p} ></ResumeCard>
+      <ResumeCard key={`resume_${i}`} resume={p} userEmail={userEmail}></ResumeCard>
     ));
   }
 

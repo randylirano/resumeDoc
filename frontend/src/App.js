@@ -8,8 +8,8 @@ import UxUiDashboard from "./pages/UxUiDashboard";
 import CreateSweResumePage from "./pages/CreateSweResumePage";
 import PmDashboard from "./pages/PmDashboard.js";
 import CreatePmResumePage from "./pages/CreatePmResumePage";
-import TestResumeDetail from "./pages/TestResumeDetail"; // DELETE AFTER COMPLETE
 import ViewSweResumePage from "./pages/ViewSweResumePage";
+import ViewPmResumePage from "./pages/ViewPmResumePage";
 import ExternalLanding from "./pages/ExternalLanding";
 
 function App() {
@@ -33,8 +33,8 @@ function App() {
           path="/create-pm-resume"
           element={<CreatePmResumePage />}
         />
-        <Route exact path="/resume-detail" element={<TestResumeDetail />} />
         <Route exact path="/view-swe-resume" element={<ViewSweResumePage />} />
+        <Route exact path="/view-pm-resume" element={<ViewPmResumePage />} />
       </Routes>
     </Router>
   );

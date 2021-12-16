@@ -16,7 +16,7 @@ function ResumeCard({ resume }) {
     <Card style={{ width: "10rem" }} id="individual-card">
       <Card.Img variant="top" src={img} height="100" width="75" />
       <Card.Body>
-        <Card.Title>Test Resume</Card.Title>
+        <Card.Title>{resume.title}</Card.Title>
         <Card.Text></Card.Text>
         <Button variant="primary" onClick={() => navigate("/resume-detail", {state: {"resume": resume}})}>
           View
@@ -60,12 +60,12 @@ export function PmResumeCardList(props) {
 
   function renderResumeCards() {
     return resumes.map((p, i) => (
-      <ResumeCard key={`resume_${i}`} resume={p}></ResumeCard>
+      <ResumeCard key={`resume_${i}`} resume={p} ></ResumeCard>
     ));
   }
 
   return (
-    <div>
+    <div className="row">
       {renderResumeCards()}
     </div>
   );

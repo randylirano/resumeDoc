@@ -68,7 +68,7 @@ const UxUiDashboardContentBox = (props) => {
           <center>
             <button
               type="button"
-              className="btn btn-outline-secondary"
+              className="btn btn-info"
               onClick={printMessage}
             >
               Create a New Resume

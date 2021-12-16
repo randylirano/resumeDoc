@@ -26,14 +26,15 @@ const SweResume = (props) => {
         <img
           src={img}
           alt="an icon showing a cartoon of three people working around an open laptop. There is code on the screen."
-          width="200"
-          height="200"
+          width="350"
+          height="350"
         />
       </center>
       <center>
         <button
           type="button"
-          className="btn btn-outline-secondary"
+          id="swe-button"
+          className="btn btn-info"
           onClick={() =>
             navigate("/swe", { state: { login_email: login_email } })
           }

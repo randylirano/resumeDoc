@@ -27,14 +27,15 @@ const UxUiResume = (props) => {
         <img
           src={img}
           alt="an icon showing a cartoon of a paint palette."
-          width="200"
-          height="200"
+          width="350"
+          height="350"
         />
       </center>
       <center>
         <button
           type="button"
-          className="btn btn-outline-secondary"
+          id="ux-ui-button"
+          className="btn btn-info"
           onClick={() =>
             navigate("/uxui", { state: { login_email: login_email } })
           }

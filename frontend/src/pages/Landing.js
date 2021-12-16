@@ -39,15 +39,15 @@ const Landing = () => {
           <center>
             <div>
               <h5 id="main-prompt">
-                Which of the following best describes <b>your goal job</b>{" "}
-                function?
+                Which of the following best describes your{" "}
+                <b>goal job function?</b>
               </h5>
             </div>
           </center>
           <SweResume login_email={activeUser} />
           <UxUiResume login_email={activeUser} />
           <PmResume login_email={activeUser} />
-          <footer>
+          <footer id="landing-footer">
             <center>© 2021 ResumeDoc</center>
           </footer>
         </div>

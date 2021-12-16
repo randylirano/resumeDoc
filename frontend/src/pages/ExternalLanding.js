@@ -18,7 +18,7 @@ const ExternalLanding = () => {
       <div className="row">
         <ExternalNavBar />
         <center>
-          <h1 id="external-tag-line">The Smart Resume Building Service</h1>
+          <h1 id="external-tag-line">ResumeDoc, the Smart Resume Tool</h1>
         </center>
       </div>
 
@@ -26,20 +26,20 @@ const ExternalLanding = () => {
         <div className="row">
           <div className="col-4" id="left-side-landing">
             <div id="main-messages">
-              <p>
-                <h2 id="home-message-one">
+              <h2 id="home-message-one">
+                <p>
                   Build a Compelling, Professional Tech Resume{" "}
                   <em>in Minutes</em>
-                </h2>
-              </p>
-              <p>
-                <h2 id="home-message-two">Your Next Opportunity Starts Here</h2>
-              </p>
+                </p>
+              </h2>
+              <h2 id="home-message-two">
+                <p>Your Next Opportunity Starts Here</p>
+              </h2>
             </div>
             <div>
               <button
                 type="button"
-                class="btn btn-info"
+                className="btn btn-info"
                 id="external-sign-in-button"
                 onClick={() => navigate("/login")}
               >

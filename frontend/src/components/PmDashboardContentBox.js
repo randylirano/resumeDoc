@@ -4,9 +4,6 @@ import { useState } from "react";
 import img from "../images/new-document.png";
 import "../stylesheets/pm-dashboard.css";
 import { useNavigate } from "react-router-dom";
-// eslint-disable-next-line no-unused-vars
-import LoadPmCard from "./LoadPmCard";
-// eslint-disable-next-line no-unused-vars
 import PmResumeCardList from "./PmResumeCardList";
 
 // Author: Randy Lirano
@@ -24,18 +21,7 @@ const PmDashboardContentBox = (props) => {
 
   // eslint-disable-next-line no-unused-vars
   const [userEmail] = useState(props.login_email);
-  // eslint-disable-next-line no-unused-vars
-  // const databaseQuery = (userEmail) => {
-  //   // TO DO
-  //   // perform database retrieval
-  //   // should return pointers to resume entries if successful -> pass to redraw function
-  //   // use Element.innerHTML selector API for #default-text
-  //   // otherwise, should return default message
-  //   return userEmail;
-  // };
-
   
-
   const navigate = useNavigate();
   return (
     <div className="row" id="main-content">
@@ -76,7 +62,6 @@ const PmDashboardContentBox = (props) => {
         <center>
           <div className="row border" id="section-listings">
             <center>
-              {/*<LoadPmCard login_email={userEmail} />*/}
               <PmResumeCardList login_email={userEmail} />
             </center>
           </div>

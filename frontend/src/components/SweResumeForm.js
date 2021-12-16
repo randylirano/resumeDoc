@@ -4,7 +4,7 @@ import "../stylesheets/pm-dashboard.css";
 // eslint-disable-next-line no-unused-vars
 import { useNavigate } from "react-router-dom";
 
-export function ResumeForm(props) {
+export function SweResumeForm(props) {
   // eslint-disable-next-line no-unused-vars
   const [userEmail] = useState(props.login_email);
   const [userResponse, setResponse] = useState({});
@@ -50,6 +50,7 @@ export function ResumeForm(props) {
         question_1: userResponse.project_question_1,
         question_2: userResponse.project_question_2,
         question_3: userResponse.project_question_3,
+        question_4: userResponse.project_question_4
       },
       skills: getParsedSkills()
     };
@@ -57,7 +58,7 @@ export function ResumeForm(props) {
     console.log(userResponse);
     console.log(resumeObj);
 
-    const res = await fetch("api/pm/create", {
+    const res = await fetch("api/swe/create", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(resumeObj),
@@ -65,15 +66,12 @@ export function ResumeForm(props) {
 
     if (res.ok) {
       window.alert("Resume successfully generated! ✅");
-      navigate("/pm", {
+      navigate("/swe", {
         state: { login_email: userEmail },
       });
     } else {
       console.log(res.status);
     }
-
-    // parsedSkills();
-    // console.log(resumeObj);
     
   };
 
@@ -276,7 +274,7 @@ export function ResumeForm(props) {
 
           <div className="form-group">
             <label>
-              Tell us an issue that you solve and the impact for the company:
+              Tell us a major project you were assigned to:
               <input
                 type="text"
                 className="form-control"
@@ -291,7 +289,7 @@ export function ResumeForm(props) {
 
           <div className="form-group">
             <label>
-              Tell us a project where you have made a major contribution:
+              What is the major challenge when working on this task:
               <input
                 type="text"
                 className="form-control"
@@ -306,7 +304,7 @@ export function ResumeForm(props) {
 
           <div className="form-group">
             <label>
-              Tell us the time where you use a specific technology to solve a certain task:
+              Tell us your approach in handling the issue:
               <input
                 type="text"
                 className="form-control"
@@ -321,7 +319,7 @@ export function ResumeForm(props) {
 
           <div className="form-group">
             <label>
-              Share the time where you take a leadership role in a project:
+              What is the measureable outcome from your approach:
               <input
                 type="text"
                 className="form-control"
@@ -382,7 +380,7 @@ export function ResumeForm(props) {
 
           <div className="form-group">
             <label>
-              What specific technology or skill that you used to tackle a major milestone in this project?
+              What major implementation did you do for this project:
               <input
                 type="text"
                 className="form-control"
@@ -397,7 +395,7 @@ export function ResumeForm(props) {
 
           <div className="form-group">
             <label>
-              What are you struggling the most in this project and how did you overcome it?
+              Tells us a new knowledge or skill you developed from this project:
               <input
                 type="text"
                 className="form-control"
@@ -412,7 +410,7 @@ export function ResumeForm(props) {
 
           <div className="form-group">
             <label>
-              What are you most proud of in this project?
+              Tells us the major challenge when completing this project:
               <input
                 type="text"
                 className="form-control"
@@ -450,4 +448,4 @@ export function ResumeForm(props) {
   );
 }
 
-export default ResumeForm;
+export default SweResumeForm;

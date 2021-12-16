@@ -4,7 +4,7 @@ import { useState } from "react";
 import img from "../images/new-document.png";
 import "../stylesheets/swe-dashboard.css";
 import { useNavigate } from "react-router-dom";
-import LoadSweCard from "./LoadSweCard";
+import SweResumeCardList from "./SweResumeCardList";
 
 // Written by Kennedy Ezumah
 
@@ -21,29 +21,7 @@ const SweDashboardContentBox = (props) => {
 
   // eslint-disable-next-line no-unused-vars
   const [userEmail] = useState(props.login_email);
-  // eslint-disable-next-line no-unused-vars
-  //const displayResume = async (userEmail) => {
-  // const resumeList = document.querySelector("#default-text");
-  // resumeList.innerHTML = "";
-  //resumeList("");
-  // TO DO
-  // perform database retrieval
-  // should return pointers to resume entries if successful -> pass to redraw function
-  // use Element.innerHTML selector API for #default-text
-  // otherwise, should return default message
-  // eslint-disable-next-line no-unused-vars
-  //const res = await fetch("api/swe/", {
-  //  method: "POST",
-  //  headers: { "Content-Type": "application/json" },
-  //  body: JSON.stringify(userEmail),
-  //});
-
-  //if (res.ok) {
-
-  //}
-  //return userEmail;
-  //};
-
+  
   const navigate = useNavigate();
   return (
     <div className="row" id="main-content">
@@ -85,7 +63,8 @@ const SweDashboardContentBox = (props) => {
           <div className="row border" id="section-listings">
             <center>
               <h4>
-                <LoadSweCard login_email={userEmail} />
+                {/* <LoadSweCard login_email={userEmail} /> */}
+                <SweResumeCardList login_email={userEmail} />
               </h4>
             </center>
           </div>

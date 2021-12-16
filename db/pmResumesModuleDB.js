@@ -1,4 +1,4 @@
-// This file handles product manager resume related CRUD operation: Listings, Adding
+// This file handles product manager resume related CRUD operation: Listings, Adding, Deleting
 // Author: Randy Lirano
 
 // Import Mongo Client

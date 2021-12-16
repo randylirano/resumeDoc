@@ -49,8 +49,8 @@ async function getSWEResumes(activeEmail) {
 // method to create new SWE resume entry in database
 async function createNewResume(entryObject) {
   const client = new MongoClient(uri);
-  let userEmail = entryObject.author;
-  let credential = { login_email: userEmail };
+  // Retrieve email of current active user
+  let userEmail = entryObject.user.userEmail;
   const db = client.db(DB_NAME);
 
   try {
@@ -60,19 +60,34 @@ async function createNewResume(entryObject) {
     // create a new object and assign values from entryObject to the newObject
     let newResumeEntry = {
       swe_resume_id: (await db.collection(COLLECTION).find().count()) + 1,
-      author: entryObject.author,
-      resumeTitle: entryObject.resumeTitle,
-      fullName: entryObject.fullName,
-      schoolAndMajor: entryObject.schoolAndMajor,
-      schoolDates: entryObject.schoolDates,
-      projectName: entryObject.projectName,
-      projectDates: entryObject.projectDates,
-      role: entryObject.role,
-      descriptionOne: entryObject.descriptionOne,
-      descriptionTwo: entryObject.descriptionTwo,
-      descriptionThree: entryObject.descriptionThree,
-      techSkillsList: entryObject.techSkillsList,
-      interestsList: entryObject.interestsList,
+      title: entryObject.title,
+      education: [{
+        school_name: entryObject.education.school_name,
+        degree: entryObject.education.degree,
+        major: entryObject.education.major,
+        start_date: entryObject.education.start_date,
+        end_date: entryObject.education.end_date
+      }],
+      work_experience: [{
+        company_name: entryObject.work_experience.company_name,
+        position: entryObject.work_experience.position,
+        start_date: entryObject.work_experience.start_date,
+        end_date: entryObject.work_experience.end_date,
+        location: entryObject.work_experience.location,
+        question_1: entryObject.work_experience.question_1,
+        question_2: entryObject.work_experience.question_2,
+        question_3: entryObject.work_experience.question_3,
+        question_4: entryObject.work_experience.question_4,
+      }],
+      project: [{
+        name: entryObject.project.project_name,
+        start_date: entryObject.project.start_date,
+        end_date: entryObject.project.end_date,
+        question_1: entryObject.project.question_1,
+        question_2: entryObject.project.question_2,
+        question_3: entryObject.project.question_3,
+      }],
+      skills: entryObject.skills
     };
 
     await db.collection(COLLECTION).insertOne(newResumeEntry);

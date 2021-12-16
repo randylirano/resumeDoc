@@ -12,12 +12,6 @@ router.post("/", async (req, res) => {
   let body = req.body;
   const resumeArray = await pmModuleDB.getPMResumes(body.login_email);
 
-  console.log("AT BACKEND ROUTE");
-  // console.log(resumeArray);
-  // for (let resume of resumeArray) {
-  //   console.log(resume);
-  // }
-
   res.json(resumeArray);
 });
 

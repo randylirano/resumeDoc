@@ -8,8 +8,6 @@ import "../stylesheets/swe-dashboard.css";
 // Written by Kennedy Ezumah
 
 const UxUiDashboard = () => {
-  const location = useLocation();
-  const login_email = location.state.login_email;
   /*
     UxUiDashboard: component responsible for displaying the UXUI dashboard page
     params: Other pages can redirect to this page by using the navigate 
@@ -17,6 +15,9 @@ const UxUiDashboard = () => {
                 "{ state: { login_email: login_email } }"
     imported-components: NavBarOther, UxUiDashBoardContentBox
   */
+
+  const location = useLocation();
+  const login_email = location.state.login_email;
   return (
     <div className="container">
       <div className="row">

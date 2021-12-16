@@ -19,30 +19,7 @@ const SweDashboardContentBox = (props) => {
             uses this object to perform the database query
   */
 
-  // eslint-disable-next-line no-unused-vars
   const [userEmail] = useState(props.login_email);
-  // eslint-disable-next-line no-unused-vars
-  //const displayResume = async (userEmail) => {
-  // const resumeList = document.querySelector("#default-text");
-  // resumeList.innerHTML = "";
-  //resumeList("");
-  // TO DO
-  // perform database retrieval
-  // should return pointers to resume entries if successful -> pass to redraw function
-  // use Element.innerHTML selector API for #default-text
-  // otherwise, should return default message
-  // eslint-disable-next-line no-unused-vars
-  //const res = await fetch("api/swe/", {
-  //  method: "POST",
-  //  headers: { "Content-Type": "application/json" },
-  //  body: JSON.stringify(userEmail),
-  //});
-
-  //if (res.ok) {
-
-  //}
-  //return userEmail;
-  //};
 
   const navigate = useNavigate();
   return (
@@ -90,7 +67,7 @@ const SweDashboardContentBox = (props) => {
             </center>
           </div>
         </center>
-        <footer>
+        <footer id="external-footer">
           <center>© 2021 ResumeDoc</center>
         </footer>
       </div>

@@ -1,0 +1,54 @@
+#external-parent {
+  background-color: #ffffff;
+}
+
+#external-navbar {
+  box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
+}
+
+#main-messages {
+  font-family: Akzidenz Grotesk BQ Medium, Helvetica, Arial !important;
+}
+
+#external-images {
+  box-shadow: 10px 15px 10px 0px rgba(0, 0, 0, 0.38);
+  border-radius: 25px;
+  background-image: "../images/handshake.jpg";
+  height: 600px;
+  width: 900px;
+  margin-bottom: 50px;
+}
+
+#home-message-one {
+  font-size: 50px;
+}
+#home-message-two {
+  color: #fdbd56;
+}
+
+#main-external-content p {
+  margin: 0;
+}
+
+#external-footer {
+  clear: both;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+#left-side-landing {
+  margin-top: 80px;
+}
+
+#landing-content {
+  margin-top: 70px;
+}
+
+#external-sign-in-button {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+#external-tag-line {
+  margin-top: 30px;
+}

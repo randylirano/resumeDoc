@@ -8,12 +8,15 @@ import UxUiDashboard from "./pages/UxUiDashboard";
 import CreateSweResumePage from "./pages/CreateSweResumePage";
 import PmDashboard from "./pages/PmDashboard.js";
 import CreatePmResumePage from "./pages/CreatePmResumePage";
+import ViewSweResumePage from "./pages/ViewSweResumePage";
+import ExternalLanding from "./pages/ExternalLanding";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Login />} />
+        <Route exact path="/" element={<ExternalLanding />} />
+        <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/landing" element={<Landing />} />
         <Route exact path="/swe" element={<SweDashboard />} />
@@ -21,12 +24,15 @@ function App() {
         <Route
           exact
           path="/create-swe-resume"
-          element={<CreateSweResumePage />}/>
+          element={<CreateSweResumePage />}
+        />
         <Route exact path="/pm" element={<PmDashboard />} />
         <Route
           exact
           path="/create-pm-resume"
-          element={<CreatePmResumePage />}/>
+          element={<CreatePmResumePage />}
+        />
+        <Route exact path="/view-swe-resume" element={<ViewSweResumePage />} />
       </Routes>
     </Router>
   );

@@ -41,7 +41,7 @@ const SignUp = () => {
     if (res.ok) {
       navigate("/");
     } else {
-      alert("Sign-up failed.");
+      alert("Sign-up failed."); //Shujun: can use toast instead
     }
   };
 

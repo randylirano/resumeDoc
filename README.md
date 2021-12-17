@@ -86,3 +86,14 @@ Once the local database has been created, follow these steps to run locally:
 [Slides](https://docs.google.com/presentation/d/1QqbB6q0ePhICMSK91DbACZfUMhQv2MGADNJeAO3ILAo/edit?usp=sharing)
 
 [Class](https://johnguerra.co/classes/webDevelopment_fall_2021/)
+
+<!-- Nathaniel's Code Review for Kennedy -->
+<!-- I really like the simple and intuitive design and layout of your resumeDoc web application. The colors used in the Landing page work really well! -->
+<!-- I also really like the simplicity and accessibility behind all your form components in your resumeDoc web application. It really gives you the feeling that you're
+ building your resume (either as a SWE, PM or UI/UX designer) within a short period of time!-->
+<!-- I really do like the alignment setup in your create resume page, but I will be honest if the alignment portion for the final project wasn't a grading requirement 
+it would be nice to have the form fields for each section (Title, Education, Work Experience and etc.) grouped in a certain way. I feel like grouping the fields for each section would make it easier to browse through which sections would need to be filled up for creating your resume.
+<!-- I also really like the use of colors and design on the Resume Dashboard for the different roles! -->
+<!-- It would be best if you used an h2 element (and customizing the h2 element's font, colors and etc. in a certain way) instead of an h5 element for your landing page-->
+<!-- Overall you did a really good job! I really like the intuitiveness of what resumeDoc is and how easy it is to use your application for building template structured 
+resumes -->

@@ -6,7 +6,7 @@ import img from "../images/resumedoc-logo.png";
 import "../stylesheets/swe-dashboard.css";
 
 // Written by Kennedy Ezumah
-
+//Shujun: proptype check may needed
 function NavBarOther(props) {
   /* 
     navBarOther: component responsible for displaying the non-landing page navigation bar

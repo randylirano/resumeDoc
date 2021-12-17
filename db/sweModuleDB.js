@@ -1,6 +1,6 @@
 // This module handles database operations with the SWE database collection
 // Written by Kennedy Ezumah
-
+//Shujun: should do some chean up, there are many console log msg here
 const { MongoClient } = require("mongodb");
 const uri = process.env.MONGO_URL || "mongodb://localhost:27017";
 
